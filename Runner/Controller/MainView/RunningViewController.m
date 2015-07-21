@@ -172,8 +172,7 @@
                     CLLocationCoordinate2D coords[2];
                     coords[0] = ((CLLocation *)self.locations.lastObject).coordinate;
                     coords[1] = newLocation.coordinate;
-                    NSLog(@"00经纬度 %f ,%f" ,coords[0].latitude,coords[0].longitude);
-                    NSLog(@"11经纬度 %f ,%f" ,coords[1].latitude,coords[1].longitude);
+           
                     [self.mapView addOverlay:[MKPolyline polylineWithCoordinates:coords count:2]];
                 }
                 [self.locations addObject:newLocation];
@@ -196,6 +195,6 @@
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
-    self.mapView.centerCoordinate=userLocation.coordinate;
+    self.mapView.centerCoordinate = userLocation.coordinate;
 }
 @end

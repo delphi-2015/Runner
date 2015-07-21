@@ -1,11 +1,13 @@
 #import "MainViewController.h"
 #import "AppDelegate.h"
 #import "RunningViewController.h"
+#import "Run.h"
+#import "MathData.h"
 
 @interface MainViewController ()
 
-@property (nonatomic,strong) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic,strong) NSArray *runArray;
+@property (strong,nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong,nonatomic) NSArray *runArray;
 
 @property (weak, nonatomic) IBOutlet UILabel *totalDistance;
 @property (weak, nonatomic) IBOutlet UILabel *totalRuns;
@@ -37,6 +39,8 @@
     [fetchRequest setSortDescriptors:@[sort]]  ;
     
     self.runArray = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
+    
+    [self setLabelData];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -44,5 +48,21 @@
     RunningViewController *controller=segue.destinationViewController;
     controller.managedObjectContext=self.managedObjectContext;
     [controller setHidesBottomBarWhenPushed:YES];
+}
+
+- (void)setLabelData
+{
+    int seconds = 0;
+    float distance = 0;
+    NSInteger con = self.runArray.count;
+    for (Run *run in self.runArray)
+    {
+        seconds += run.duration.intValue;
+        distance += run.distance.floatValue;
+    }
+    
+    self.totalDistance.text = [MathData stringifyDistance:distance];
+    self.totalRuns.text = [NSString stringWithFormat:@"%ld",(long)con];
+    self.avgSpeed.text = [MathData stringifyAvgPaceFromDist:distance overTime:seconds ifleft:NO];
 }
 @end

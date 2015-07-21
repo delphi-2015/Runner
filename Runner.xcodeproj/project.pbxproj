@@ -22,6 +22,8 @@
 		48F7FA221B5B75ED007CF8B2 /* MathData.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA211B5B75ED007CF8B2 /* MathData.m */; };
 		48F7FA251B5BB86D007CF8B2 /* WGS84TOGCJ02.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA241B5BB86D007CF8B2 /* WGS84TOGCJ02.m */; };
 		48F7FA2B1B5BE7E6007CF8B2 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA2A1B5BE7E6007CF8B2 /* DetailViewController.m */; };
+		48F7FA311B5DDD0F007CF8B2 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA301B5DDD0F007CF8B2 /* ActivityViewController.m */; };
+		48F7FA381B5DE1C5007CF8B2 /* ActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA361B5DE1C5007CF8B2 /* ActivityCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,10 @@
 		48F7FA241B5BB86D007CF8B2 /* WGS84TOGCJ02.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGS84TOGCJ02.m; sourceTree = "<group>"; };
 		48F7FA291B5BE7E6007CF8B2 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		48F7FA2A1B5BE7E6007CF8B2 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		48F7FA2F1B5DDD0F007CF8B2 /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
+		48F7FA301B5DDD0F007CF8B2 /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
+		48F7FA351B5DE1C5007CF8B2 /* ActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityCell.h; path = ../../../../../Documents/ActivityCell.h; sourceTree = "<group>"; };
+		48F7FA361B5DE1C5007CF8B2 /* ActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityCell.m; path = ../../../../../Documents/ActivityCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +166,8 @@
 		489738A01B58AC20002A438B /* Activity */ = {
 			isa = PBXGroup;
 			children = (
+				48F7FA2F1B5DDD0F007CF8B2 /* ActivityViewController.h */,
+				48F7FA301B5DDD0F007CF8B2 /* ActivityViewController.m */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -208,6 +216,8 @@
 		489738AB1B58AC20002A438B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				48F7FA351B5DE1C5007CF8B2 /* ActivityCell.h */,
+				48F7FA361B5DE1C5007CF8B2 /* ActivityCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -318,6 +328,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4897387C1B58AAE8002A438B /* AppDelegate.m in Sources */,
+				48F7FA311B5DDD0F007CF8B2 /* ActivityViewController.m in Sources */,
+				48F7FA381B5DE1C5007CF8B2 /* ActivityCell.m in Sources */,
 				48F7FA221B5B75ED007CF8B2 /* MathData.m in Sources */,
 				489738B11B59DC98002A438B /* MainViewController.m in Sources */,
 				489738791B58AAE8002A438B /* main.m in Sources */,

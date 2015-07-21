@@ -7,8 +7,9 @@
 //
 
 #import "DetailViewController.h"
+#import <MapKit/MapKit.h>
 
-@interface DetailViewController ()
+@interface DetailViewController ()<MKMapViewDelegate>
 
 @end
 
