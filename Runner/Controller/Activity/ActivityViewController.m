@@ -3,6 +3,7 @@
 #import "MathData.h"
 #import "ActivityCell.h"
 #import "Run.h"
+#import "DetailViewController.h"
 
 @interface ActivityViewController ()
 
@@ -117,12 +118,14 @@
 
 
 #pragma mark - Navigation
-/*
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.destinationViewController isKindOfClass:[DetailViewController class]]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        Run *run = [self.runArray objectAtIndex:indexPath.row];
+        [(DetailViewController *)[segue destinationViewController] setRun:run];
+    }
 }
-*/
+
 
 @end

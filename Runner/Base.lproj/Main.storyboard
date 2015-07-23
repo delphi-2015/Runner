@@ -386,7 +386,7 @@
                             <constraint firstItem="Nak-vx-1oZ" firstAttribute="leading" secondItem="vsK-nW-B77" secondAttribute="leading" id="l7R-ks-fk0"/>
                             <constraint firstAttribute="trailing" secondItem="4AE-de-1RI" secondAttribute="trailing" id="siD-9z-Pev"/>
                             <constraint firstAttribute="trailing" secondItem="Nak-vx-1oZ" secondAttribute="trailing" id="stP-cR-zMN"/>
-                            <constraint firstItem="f9H-ES-okj" firstAttribute="top" secondItem="Ts6-NU-BSg" secondAttribute="bottom" id="uEl-F0-YG0"/>
+                            <constraint firstItem="f9H-ES-okj" firstAttribute="bottom" secondItem="Ts6-NU-BSg" secondAttribute="bottom" id="uEl-F0-YG0"/>
                             <constraint firstAttribute="trailing" secondItem="LCi-F8-ATM" secondAttribute="trailing" id="wM3-7g-Wz6"/>
                             <constraint firstItem="4AE-de-1RI" firstAttribute="leading" secondItem="vsK-nW-B77" secondAttribute="leading" id="xUr-uL-1Hn"/>
                         </constraints>
@@ -411,7 +411,7 @@
         <!--Detail View Controller-->
         <scene sceneID="lp7-ZV-60r">
             <objects>
-                <viewController id="v8l-K3-dX6" customClass="DetailViewController" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="v8l-K3-dX6" customClass="DetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="F8k-qN-dbH"/>
                         <viewControllerLayoutGuide type="bottom" id="wCc-nb-koV"/>
@@ -420,19 +420,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NWf-ot-93r">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="224"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NWf-ot-93r">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="378.5"/>
                             </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lzm-fy-dhU" customClass="JBChartInformationView">
+                                <rect key="frame" x="0.0" y="379" width="320" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="0hW-Wt-shg"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwc-gz-OES">
+                                <rect key="frame" x="20" y="84" width="42" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="iDM-OM-bek"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ua-sJ-O0T">
+                                <rect key="frame" x="258" y="84" width="42" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="lEy-Lg-sml"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iZi-16-3dq" customClass="JBLineChartView">
+                                <rect key="frame" x="0.0" y="419" width="320" height="149"/>
+                                <color key="backgroundColor" red="0.89416557109999995" green="1" blue="0.97144598719999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="NWf-ot-93r" secondAttribute="trailing" id="1BV-Rq-Hl7"/>
+                            <constraint firstItem="iZi-16-3dq" firstAttribute="leading" secondItem="33x-4l-nWP" secondAttribute="leading" id="4h8-XS-1lN"/>
+                            <constraint firstItem="NWf-ot-93r" firstAttribute="top" secondItem="33x-4l-nWP" secondAttribute="top" id="6zt-LM-6Uz"/>
+                            <constraint firstAttribute="trailing" secondItem="iZi-16-3dq" secondAttribute="trailing" id="Bjy-My-wvr"/>
+                            <constraint firstAttribute="height" secondItem="NWf-ot-93r" secondAttribute="height" multiplier="1.5" id="Jzz-d8-JlJ"/>
+                            <constraint firstItem="gwc-gz-OES" firstAttribute="top" secondItem="F8k-qN-dbH" secondAttribute="bottom" constant="20" id="LJ2-HT-qty"/>
+                            <constraint firstItem="NWf-ot-93r" firstAttribute="leading" secondItem="33x-4l-nWP" secondAttribute="leading" id="Le6-NM-sGC"/>
+                            <constraint firstItem="iZi-16-3dq" firstAttribute="top" secondItem="lzm-fy-dhU" secondAttribute="bottom" id="MdH-kQ-bIl"/>
+                            <constraint firstAttribute="trailing" secondItem="6ua-sJ-O0T" secondAttribute="trailing" constant="20" id="Yfw-xo-1Gh"/>
+                            <constraint firstAttribute="trailing" secondItem="lzm-fy-dhU" secondAttribute="trailing" id="e73-vs-uZ7"/>
+                            <constraint firstItem="6ua-sJ-O0T" firstAttribute="bottom" secondItem="gwc-gz-OES" secondAttribute="bottom" id="h18-8r-1GI"/>
+                            <constraint firstAttribute="bottom" secondItem="iZi-16-3dq" secondAttribute="bottom" id="hrD-cL-rkV"/>
+                            <constraint firstItem="lzm-fy-dhU" firstAttribute="leading" secondItem="33x-4l-nWP" secondAttribute="leading" id="jG7-NT-0CR"/>
+                            <constraint firstItem="lzm-fy-dhU" firstAttribute="top" secondItem="NWf-ot-93r" secondAttribute="bottom" id="opj-JK-53X"/>
+                            <constraint firstItem="gwc-gz-OES" firstAttribute="leading" secondItem="33x-4l-nWP" secondAttribute="leading" constant="20" id="ykE-sD-Oy0"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="19a-Y5-xSv"/>
+                    <connections>
+                        <outlet property="JBChartInfoView" destination="lzm-fy-dhU" id="JWc-jB-n3u"/>
+                        <outlet property="JBLineChartView" destination="iZi-16-3dq" id="Uod-bS-5q4"/>
+                        <outlet property="caloireLabel" destination="6ua-sJ-O0T" id="tiN-Lk-dXa"/>
+                        <outlet property="timeLabel" destination="gwc-gz-OES" id="sAg-3L-VB6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n9g-WZ-2dN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1343" y="-516"/>
+            <point key="canvasLocation" x="1079" y="232"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Activity-->
         <scene sceneID="fJA-gl-HD5">
             <objects>
                 <tableViewController id="Y6B-gW-r8X" customClass="ActivityViewController" sceneMemberID="viewController">
@@ -486,6 +537,7 @@
                                     <outlet property="distanceLabel" destination="MXd-aK-edP" id="y5Q-UD-MNQ"/>
                                     <outlet property="paceLabel" destination="t0e-4P-BgG" id="DAx-Er-80D"/>
                                     <outlet property="timeLabel" destination="LT7-xp-zSk" id="FNf-vj-gZI"/>
+                                    <segue destination="v8l-K3-dX6" kind="push" id="lNP-j9-lgc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -494,7 +546,7 @@
                             <outlet property="delegate" destination="Y6B-gW-r8X" id="ygo-YE-yLv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="0ff-hU-48d"/>
+                    <navigationItem key="navigationItem" title="Activity" id="0ff-hU-48d"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FMM-Ne-ePd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -572,4 +624,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="lNP-j9-lgc"/>
+    </inferredMetricsTieBreakers>
 </document>

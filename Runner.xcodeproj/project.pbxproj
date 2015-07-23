@@ -23,7 +23,13 @@
 		48F7FA251B5BB86D007CF8B2 /* WGS84TOGCJ02.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA241B5BB86D007CF8B2 /* WGS84TOGCJ02.m */; };
 		48F7FA2B1B5BE7E6007CF8B2 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA2A1B5BE7E6007CF8B2 /* DetailViewController.m */; };
 		48F7FA311B5DDD0F007CF8B2 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA301B5DDD0F007CF8B2 /* ActivityViewController.m */; };
-		48F7FA381B5DE1C5007CF8B2 /* ActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA361B5DE1C5007CF8B2 /* ActivityCell.m */; };
+		48F7FA4B1B5F5B43007CF8B2 /* JBChartInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA431B5F5B43007CF8B2 /* JBChartInformationView.m */; };
+		48F7FA4D1B5F5B43007CF8B2 /* JBLineChartFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA471B5F5B43007CF8B2 /* JBLineChartFooterView.m */; };
+		48F7FA571B5F68F0007CF8B2 /* ActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA541B5F68F0007CF8B2 /* ActivityCell.m */; };
+		48F7FA581B5F68F0007CF8B2 /* ColorPolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA561B5F68F0007CF8B2 /* ColorPolyline.m */; };
+		48F7FA711B5FB806007CF8B2 /* JBBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA6C1B5FB806007CF8B2 /* JBBarChartView.m */; };
+		48F7FA721B5FB806007CF8B2 /* JBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA6E1B5FB806007CF8B2 /* JBChartView.m */; };
+		48F7FA731B5FB806007CF8B2 /* JBLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA701B5FB806007CF8B2 /* JBLineChartView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,8 +72,20 @@
 		48F7FA2A1B5BE7E6007CF8B2 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		48F7FA2F1B5DDD0F007CF8B2 /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
 		48F7FA301B5DDD0F007CF8B2 /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
-		48F7FA351B5DE1C5007CF8B2 /* ActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityCell.h; path = ../../../../../Documents/ActivityCell.h; sourceTree = "<group>"; };
-		48F7FA361B5DE1C5007CF8B2 /* ActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityCell.m; path = ../../../../../Documents/ActivityCell.m; sourceTree = "<group>"; };
+		48F7FA421B5F5B43007CF8B2 /* JBChartInformationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBChartInformationView.h; sourceTree = "<group>"; };
+		48F7FA431B5F5B43007CF8B2 /* JBChartInformationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBChartInformationView.m; sourceTree = "<group>"; };
+		48F7FA461B5F5B43007CF8B2 /* JBLineChartFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLineChartFooterView.h; sourceTree = "<group>"; };
+		48F7FA471B5F5B43007CF8B2 /* JBLineChartFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLineChartFooterView.m; sourceTree = "<group>"; };
+		48F7FA531B5F68F0007CF8B2 /* ActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityCell.h; sourceTree = "<group>"; };
+		48F7FA541B5F68F0007CF8B2 /* ActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityCell.m; sourceTree = "<group>"; };
+		48F7FA551B5F68F0007CF8B2 /* ColorPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPolyline.h; sourceTree = "<group>"; };
+		48F7FA561B5F68F0007CF8B2 /* ColorPolyline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPolyline.m; sourceTree = "<group>"; };
+		48F7FA6B1B5FB806007CF8B2 /* JBBarChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBarChartView.h; sourceTree = "<group>"; };
+		48F7FA6C1B5FB806007CF8B2 /* JBBarChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBBarChartView.m; sourceTree = "<group>"; };
+		48F7FA6D1B5FB806007CF8B2 /* JBChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBChartView.h; sourceTree = "<group>"; };
+		48F7FA6E1B5FB806007CF8B2 /* JBChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBChartView.m; sourceTree = "<group>"; };
+		48F7FA6F1B5FB806007CF8B2 /* JBLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLineChartView.h; sourceTree = "<group>"; };
+		48F7FA701B5FB806007CF8B2 /* JBLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLineChartView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +129,9 @@
 		489738751B58AAE8002A438B /* Runner */ = {
 			isa = PBXGroup;
 			children = (
+				48F7FA521B5F68F0007CF8B2 /* View */,
+				48F7FA3F1B5F5B43007CF8B2 /* JBChartView */,
 				489738AA1B58AC20002A438B /* Model */,
-				489738AB1B58AC20002A438B /* View */,
 				4897389F1B58AC20002A438B /* Controller */,
 				489738A31B58AC20002A438B /* CoreData */,
 				4897387A1B58AAE8002A438B /* AppDelegate.h */,
@@ -213,11 +232,30 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		489738AB1B58AC20002A438B /* View */ = {
+		48F7FA3F1B5F5B43007CF8B2 /* JBChartView */ = {
 			isa = PBXGroup;
 			children = (
-				48F7FA351B5DE1C5007CF8B2 /* ActivityCell.h */,
-				48F7FA361B5DE1C5007CF8B2 /* ActivityCell.m */,
+				48F7FA6B1B5FB806007CF8B2 /* JBBarChartView.h */,
+				48F7FA6C1B5FB806007CF8B2 /* JBBarChartView.m */,
+				48F7FA6D1B5FB806007CF8B2 /* JBChartView.h */,
+				48F7FA6E1B5FB806007CF8B2 /* JBChartView.m */,
+				48F7FA6F1B5FB806007CF8B2 /* JBLineChartView.h */,
+				48F7FA701B5FB806007CF8B2 /* JBLineChartView.m */,
+				48F7FA421B5F5B43007CF8B2 /* JBChartInformationView.h */,
+				48F7FA431B5F5B43007CF8B2 /* JBChartInformationView.m */,
+				48F7FA461B5F5B43007CF8B2 /* JBLineChartFooterView.h */,
+				48F7FA471B5F5B43007CF8B2 /* JBLineChartFooterView.m */,
+			);
+			path = JBChartView;
+			sourceTree = "<group>";
+		};
+		48F7FA521B5F68F0007CF8B2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				48F7FA531B5F68F0007CF8B2 /* ActivityCell.h */,
+				48F7FA541B5F68F0007CF8B2 /* ActivityCell.m */,
+				48F7FA551B5F68F0007CF8B2 /* ColorPolyline.h */,
+				48F7FA561B5F68F0007CF8B2 /* ColorPolyline.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -328,16 +366,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				4897387C1B58AAE8002A438B /* AppDelegate.m in Sources */,
+				48F7FA731B5FB806007CF8B2 /* JBLineChartView.m in Sources */,
 				48F7FA311B5DDD0F007CF8B2 /* ActivityViewController.m in Sources */,
-				48F7FA381B5DE1C5007CF8B2 /* ActivityCell.m in Sources */,
+				48F7FA4D1B5F5B43007CF8B2 /* JBLineChartFooterView.m in Sources */,
 				48F7FA221B5B75ED007CF8B2 /* MathData.m in Sources */,
 				489738B11B59DC98002A438B /* MainViewController.m in Sources */,
 				489738791B58AAE8002A438B /* main.m in Sources */,
+				48F7FA571B5F68F0007CF8B2 /* ActivityCell.m in Sources */,
 				489738AD1B58AC20002A438B /* Run.m in Sources */,
 				48F7FA2B1B5BE7E6007CF8B2 /* DetailViewController.m in Sources */,
+				48F7FA711B5FB806007CF8B2 /* JBBarChartView.m in Sources */,
 				489738AC1B58AC20002A438B /* Location.m in Sources */,
 				489738AE1B58AC20002A438B /* Runner.xcdatamodeld in Sources */,
+				48F7FA581B5F68F0007CF8B2 /* ColorPolyline.m in Sources */,
 				48F7FA251B5BB86D007CF8B2 /* WGS84TOGCJ02.m in Sources */,
+				48F7FA4B1B5F5B43007CF8B2 /* JBChartInformationView.m in Sources */,
+				48F7FA721B5FB806007CF8B2 /* JBChartView.m in Sources */,
 				489738B61B5B31F3002A438B /* RunningViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
