@@ -1,10 +1,10 @@
 #import "JBChartInformationView.h"
 
 // Numerics
-CGFloat const kJBChartValueViewPadding = 10.0f;
+CGFloat const kJBChartValueViewPadding = 5.0f;
 CGFloat const kJBChartValueViewSeparatorSize = 1.0f;
 CGFloat const kJBChartValueViewTitleHeight = 50.0f;
-CGFloat const kJBChartValueViewTitleWidth = 75.0f;
+CGFloat const kJBChartValueViewTitleWidth = 200.0f;
 
 // Colors (JBChartInformationView)
 static UIColor *kJBChartViewSeparatorColor = nil;
@@ -50,28 +50,27 @@ static UIColor *kJBChartInformationViewShadowColor = nil;
 	}
 }
 
-- (id)initWithFrame:(CGRect)frame layout:(JBChartInformationViewLayout)layout
+- (id)layout:(JBChartInformationViewLayout)layout
 {
-    self = [super initWithFrame:frame];
     if (self)
     {
         self.clipsToBounds = YES;
         _layout = layout;
 
         _titleLabel = [[UILabel alloc] init];
-        _titleLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:20];
+        _titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-CondensedBold" size:35];
         _titleLabel.numberOfLines = 1;
         _titleLabel.adjustsFontSizeToFitWidth = YES;
         _titleLabel.backgroundColor = [UIColor clearColor];
         _titleLabel.textColor = kJBChartViewTitleColor;
         _titleLabel.shadowColor = kJBChartViewShadowColor;
         _titleLabel.shadowOffset = CGSizeMake(0, 1);
-        _titleLabel.textAlignment = _layout == JBChartInformationViewLayoutHorizontal ? NSTextAlignmentLeft : NSTextAlignmentCenter;
+        _titleLabel.textAlignment = NSTextAlignmentLeft;
         [self addSubview:_titleLabel];
 
-        _separatorView = [[UIView alloc] init];
-        _separatorView.backgroundColor = kJBChartViewSeparatorColor;
-        [self addSubview:_separatorView];
+//        _separatorView = [[UIView alloc] init];
+//        _separatorView.backgroundColor = kJBChartViewSeparatorColor;
+//        [self addSubview:_separatorView];
 
         _valueView = [[JBChartValueView alloc] initWithFrame:[self valueViewRect]];
         [self addSubview:_valueView];
@@ -83,7 +82,7 @@ static UIColor *kJBChartInformationViewShadowColor = nil;
 
 - (id)initWithFrame:(CGRect)frame
 {
-    return [self initWithFrame:frame layout:JBChartInformationViewLayoutHorizontal];
+    return [self layout:JBChartInformationViewLayoutHorizontal];
 }
 
 #pragma mark - Position
@@ -92,9 +91,9 @@ static UIColor *kJBChartInformationViewShadowColor = nil;
 {
     CGRect valueRect = CGRectZero;
     valueRect.origin.x = (self.layout == JBChartInformationViewLayoutHorizontal) ? kJBChartValueViewPadding : (kJBChartValueViewPadding * 3) + kJBChartValueViewTitleWidth;
-    valueRect.origin.y = (self.layout == JBChartInformationViewLayoutHorizontal) ? kJBChartValueViewPadding + kJBChartValueViewTitleHeight : kJBChartValueViewPadding;
+    valueRect.origin.y = (self.layout == JBChartInformationViewLayoutHorizontal) ?kJBChartValueViewPadding + kJBChartValueViewTitleHeight : 20;
     valueRect.size.width = (self.layout == JBChartInformationViewLayoutHorizontal) ? self.bounds.size.width - (kJBChartValueViewPadding * 2) : self.bounds.size.width - valueRect.origin.x - kJBChartValueViewPadding;
-    valueRect.size.height = (self.layout == JBChartInformationViewLayoutHorizontal) ? self.bounds.size.height - valueRect.origin.y - kJBChartValueViewPadding : self.bounds.size.height - (kJBChartValueViewPadding * 2);
+    valueRect.size.height = (self.layout == JBChartInformationViewLayoutHorizontal) ? self.bounds.size.height - valueRect.origin.y - kJBChartValueViewPadding : self.bounds.size.height - 20;
     return valueRect;
 }
 
@@ -238,7 +237,7 @@ static UIColor *kJBChartInformationViewShadowColor = nil;
     if (self)
     {
         _valueLabel = [[UILabel alloc] init];
-        _valueLabel.font = [UIFont fontWithName:@"HelveticaNeue-CondensedBold" size:100];
+        _valueLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:20];
         _valueLabel.textColor = kJBChartInformationViewValueColor;
         _valueLabel.shadowColor = kJBChartInformationViewShadowColor;
         _valueLabel.shadowOffset = CGSizeMake(0, 1);
@@ -249,7 +248,7 @@ static UIColor *kJBChartInformationViewShadowColor = nil;
         [self addSubview:_valueLabel];
         
         _unitLabel = [[UILabel alloc] init];
-        _unitLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:60];
+        _unitLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:20];
         _unitLabel.textColor = kJBChartInformationViewUnitColor;
         _unitLabel.shadowColor = kJBChartInformationViewShadowColor;
         _unitLabel.shadowOffset = CGSizeMake(0, 1);
@@ -273,7 +272,8 @@ static UIColor *kJBChartInformationViewShadowColor = nil;
     self.valueLabel.frame = CGRectMake(xOffset, ceil(self.bounds.size.height * 0.5) - ceil(valueLabelSize.height * 0.5), width, valueLabelSize.height);
     
     CGSize unitLabelSize = [self.unitLabel.text sizeWithAttributes:@{NSFontAttributeName:self.unitLabel.font}];
-    self.unitLabel.frame = CGRectMake(CGRectGetMaxX(self.valueLabel.frame), ceil(self.bounds.size.height * 0.5) - ceil(unitLabelSize.height * 0.5) + kJBChartValueViewPadding + 3, width, unitLabelSize.height);
+    self.unitLabel.frame = CGRectMake(CGRectGetMaxX(self.valueLabel.frame), ceil(self.bounds.size.height * 0.5) - ceil(valueLabelSize.height * 0.5), width, unitLabelSize.height);
+    //ceil(self.bounds.size.height * 0.5) - ceil(unitLabelSize.height * 0.5) + kJBChartValueViewPadding + 3
 }
 
 @end

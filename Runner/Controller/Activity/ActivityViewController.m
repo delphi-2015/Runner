@@ -22,6 +22,9 @@
     AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     self.managedObjectContext = [appDelegate managedObjectContext];
     
+    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithTitle:@"" style:UIBarButtonItemStyleDone target:nil action:nil];
+    self.navigationItem.backBarButtonItem = item;
+    
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height, self.view.frame.size.width, 50)];
     [button setBackgroundColor:[UIColor redColor]];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];

@@ -112,7 +112,6 @@ static UIColor *kJBLineChartViewDefaultLineColor = nil;
         _showsSelection = YES;
         _cachedMaxHeight = kJBLineChartViewUndefinedMaxHeight;
     }
-    self.userInteractionEnabled = YES;
     return self;
 }
 
@@ -208,7 +207,7 @@ static UIColor *kJBLineChartViewDefaultLineColor = nil;
 
     // Position header and footer
     self.headerView.frame = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width, self.headerView.frame.size.height);
-    self.footerView.frame = CGRectMake(self.bounds.origin.x+10, self.bounds.size.height - self.footerView.frame.size.height, self.bounds.size.width-20, self.footerView.frame.size.height);
+    self.footerView.frame = CGRectMake(self.bounds.origin.x+5, self.bounds.size.height - self.footerView.frame.size.height, self.bounds.size.width-10, self.footerView.frame.size.height);
 
 }
 

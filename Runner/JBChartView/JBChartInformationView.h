@@ -11,7 +11,7 @@ typedef NS_ENUM(NSInteger, JBChartInformationViewLayout){
 /*
  * View must be initialized with a layout type (default = horizontal)
  */
-- (id)initWithFrame:(CGRect)frame layout:(JBChartInformationViewLayout)layout;
+- (id)layout:(JBChartInformationViewLayout)layout;
 
 @property (nonatomic, assign, readonly) JBChartInformationViewLayout layout; // read-only (must be set in init..)
 

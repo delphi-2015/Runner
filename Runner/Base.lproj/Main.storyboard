@@ -101,7 +101,7 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbq-N6-Wya">
                                 <rect key="frame" x="0.0" y="80" width="320" height="174.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -421,35 +421,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NWf-ot-93r">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="378.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="437"/>
                             </mapView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lzm-fy-dhU" customClass="JBChartInformationView">
-                                <rect key="frame" x="0.0" y="379" width="320" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="0hW-Wt-shg"/>
-                                </constraints>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwc-gz-OES">
-                                <rect key="frame" x="20" y="84" width="42" height="26"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="26" id="iDM-OM-bek"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ua-sJ-O0T">
-                                <rect key="frame" x="258" y="84" width="42" height="26"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="26" id="lEy-Lg-sml"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iZi-16-3dq" customClass="JBLineChartView">
-                                <rect key="frame" x="0.0" y="419" width="320" height="149"/>
-                                <color key="backgroundColor" red="0.89416557109999995" green="1" blue="0.97144598719999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="437" width="320" height="131"/>
+                                <color key="backgroundColor" red="0.17446417716560686" green="0.21692262589931488" blue="0.2018393431220348" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lzm-fy-dhU" customClass="JBChartInformationView">
+                                <rect key="frame" x="0.0" y="377" width="320" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="mvf-VF-zsg"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -457,26 +439,21 @@
                             <constraint firstAttribute="trailing" secondItem="NWf-ot-93r" secondAttribute="trailing" id="1BV-Rq-Hl7"/>
                             <constraint firstItem="iZi-16-3dq" firstAttribute="leading" secondItem="33x-4l-nWP" secondAttribute="leading" id="4h8-XS-1lN"/>
                             <constraint firstItem="NWf-ot-93r" firstAttribute="top" secondItem="33x-4l-nWP" secondAttribute="top" id="6zt-LM-6Uz"/>
+                            <constraint firstItem="lzm-fy-dhU" firstAttribute="leading" secondItem="33x-4l-nWP" secondAttribute="leading" id="AJp-8H-J5h"/>
                             <constraint firstAttribute="trailing" secondItem="iZi-16-3dq" secondAttribute="trailing" id="Bjy-My-wvr"/>
-                            <constraint firstAttribute="height" secondItem="NWf-ot-93r" secondAttribute="height" multiplier="1.5" id="Jzz-d8-JlJ"/>
-                            <constraint firstItem="gwc-gz-OES" firstAttribute="top" secondItem="F8k-qN-dbH" secondAttribute="bottom" constant="20" id="LJ2-HT-qty"/>
+                            <constraint firstAttribute="height" secondItem="NWf-ot-93r" secondAttribute="height" multiplier="1.3" id="Jzz-d8-JlJ"/>
                             <constraint firstItem="NWf-ot-93r" firstAttribute="leading" secondItem="33x-4l-nWP" secondAttribute="leading" id="Le6-NM-sGC"/>
-                            <constraint firstItem="iZi-16-3dq" firstAttribute="top" secondItem="lzm-fy-dhU" secondAttribute="bottom" id="MdH-kQ-bIl"/>
-                            <constraint firstAttribute="trailing" secondItem="6ua-sJ-O0T" secondAttribute="trailing" constant="20" id="Yfw-xo-1Gh"/>
-                            <constraint firstAttribute="trailing" secondItem="lzm-fy-dhU" secondAttribute="trailing" id="e73-vs-uZ7"/>
-                            <constraint firstItem="6ua-sJ-O0T" firstAttribute="bottom" secondItem="gwc-gz-OES" secondAttribute="bottom" id="h18-8r-1GI"/>
+                            <constraint firstAttribute="trailing" secondItem="lzm-fy-dhU" secondAttribute="trailing" id="PfN-J1-fMS"/>
+                            <constraint firstItem="iZi-16-3dq" firstAttribute="top" secondItem="NWf-ot-93r" secondAttribute="bottom" id="bIg-ZF-2dp"/>
                             <constraint firstAttribute="bottom" secondItem="iZi-16-3dq" secondAttribute="bottom" id="hrD-cL-rkV"/>
-                            <constraint firstItem="lzm-fy-dhU" firstAttribute="leading" secondItem="33x-4l-nWP" secondAttribute="leading" id="jG7-NT-0CR"/>
-                            <constraint firstItem="lzm-fy-dhU" firstAttribute="top" secondItem="NWf-ot-93r" secondAttribute="bottom" id="opj-JK-53X"/>
-                            <constraint firstItem="gwc-gz-OES" firstAttribute="leading" secondItem="33x-4l-nWP" secondAttribute="leading" constant="20" id="ykE-sD-Oy0"/>
+                            <constraint firstItem="lzm-fy-dhU" firstAttribute="bottom" secondItem="NWf-ot-93r" secondAttribute="bottom" id="nQ2-T4-Hia"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="19a-Y5-xSv"/>
                     <connections>
                         <outlet property="JBChartInfoView" destination="lzm-fy-dhU" id="JWc-jB-n3u"/>
                         <outlet property="JBLineChartView" destination="iZi-16-3dq" id="Uod-bS-5q4"/>
-                        <outlet property="caloireLabel" destination="6ua-sJ-O0T" id="tiN-Lk-dXa"/>
-                        <outlet property="timeLabel" destination="gwc-gz-OES" id="sAg-3L-VB6"/>
+                        <outlet property="mapView" destination="NWf-ot-93r" id="XzO-9h-Sjf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n9g-WZ-2dN" userLabel="First Responder" sceneMemberID="firstResponder"/>

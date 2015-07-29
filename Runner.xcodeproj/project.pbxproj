@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48645F8C1B6854B10098EEE8 /* DistanceAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 48645F8B1B6854B10098EEE8 /* DistanceAnnotation.m */; };
 		489738791B58AAE8002A438B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 489738781B58AAE8002A438B /* main.m */; };
 		4897387C1B58AAE8002A438B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4897387B1B58AAE8002A438B /* AppDelegate.m */; };
 		489738851B58AAE8002A438B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 489738831B58AAE8002A438B /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 		48F7FA711B5FB806007CF8B2 /* JBBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA6C1B5FB806007CF8B2 /* JBBarChartView.m */; };
 		48F7FA721B5FB806007CF8B2 /* JBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA6E1B5FB806007CF8B2 /* JBChartView.m */; };
 		48F7FA731B5FB806007CF8B2 /* JBLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA701B5FB806007CF8B2 /* JBLineChartView.m */; };
+		48F7FA791B61FA7E007CF8B2 /* MapDetialView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA781B61FA7E007CF8B2 /* MapDetialView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		48645F8A1B6854B10098EEE8 /* DistanceAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistanceAnnotation.h; sourceTree = "<group>"; };
+		48645F8B1B6854B10098EEE8 /* DistanceAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistanceAnnotation.m; sourceTree = "<group>"; };
 		489738731B58AAE8002A438B /* Runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Runner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		489738771B58AAE8002A438B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		489738781B58AAE8002A438B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -86,6 +90,8 @@
 		48F7FA6E1B5FB806007CF8B2 /* JBChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBChartView.m; sourceTree = "<group>"; };
 		48F7FA6F1B5FB806007CF8B2 /* JBLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLineChartView.h; sourceTree = "<group>"; };
 		48F7FA701B5FB806007CF8B2 /* JBLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLineChartView.m; sourceTree = "<group>"; };
+		48F7FA771B61FA7E007CF8B2 /* MapDetialView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapDetialView.h; sourceTree = "<group>"; };
+		48F7FA781B61FA7E007CF8B2 /* MapDetialView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapDetialView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,10 +258,14 @@
 		48F7FA521B5F68F0007CF8B2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				48F7FA771B61FA7E007CF8B2 /* MapDetialView.h */,
+				48F7FA781B61FA7E007CF8B2 /* MapDetialView.m */,
 				48F7FA531B5F68F0007CF8B2 /* ActivityCell.h */,
 				48F7FA541B5F68F0007CF8B2 /* ActivityCell.m */,
 				48F7FA551B5F68F0007CF8B2 /* ColorPolyline.h */,
 				48F7FA561B5F68F0007CF8B2 /* ColorPolyline.m */,
+				48645F8A1B6854B10098EEE8 /* DistanceAnnotation.h */,
+				48645F8B1B6854B10098EEE8 /* DistanceAnnotation.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -374,6 +384,7 @@
 				489738791B58AAE8002A438B /* main.m in Sources */,
 				48F7FA571B5F68F0007CF8B2 /* ActivityCell.m in Sources */,
 				489738AD1B58AC20002A438B /* Run.m in Sources */,
+				48645F8C1B6854B10098EEE8 /* DistanceAnnotation.m in Sources */,
 				48F7FA2B1B5BE7E6007CF8B2 /* DetailViewController.m in Sources */,
 				48F7FA711B5FB806007CF8B2 /* JBBarChartView.m in Sources */,
 				489738AC1B58AC20002A438B /* Location.m in Sources */,
@@ -383,6 +394,7 @@
 				48F7FA4B1B5F5B43007CF8B2 /* JBChartInformationView.m in Sources */,
 				48F7FA721B5FB806007CF8B2 /* JBChartView.m in Sources */,
 				489738B61B5B31F3002A438B /* RunningViewController.m in Sources */,
+				48F7FA791B61FA7E007CF8B2 /* MapDetialView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

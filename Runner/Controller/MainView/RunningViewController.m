@@ -13,6 +13,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "MathData.h"
 #import "WGS84TOGCJ02.h"
+#import "DetailViewController.h"
 
 @interface RunningViewController ()<UIActionSheetDelegate, CLLocationManagerDelegate, MKMapViewDelegate>
 
@@ -98,23 +99,47 @@
 
 - (IBAction)stopBtnPressed:(id)sender
 {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self
-                                                    cancelButtonTitle:@"取消 " destructiveButtonTitle:nil
-                                                    otherButtonTitles:@"保存", @"删除", nil];
-    actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
-    [actionSheet showInView:self.view];
+    if (self.distance)
+    {
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self
+                                                        cancelButtonTitle:@"取消 " destructiveButtonTitle:nil
+                                                        otherButtonTitles:@"保存", @"删除", nil];
+        actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
+        [actionSheet showInView:self.view];
+        actionSheet.tag = 1;
+    }else
+    {
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self
+                                                        cancelButtonTitle:@"取消 " destructiveButtonTitle:nil
+                                                        otherButtonTitles:@"删除", nil];
+        actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
+        [actionSheet showInView:self.view];
+        actionSheet.tag = 2;
+    }
+
+
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    // 保存
-    if (buttonIndex == 0) {
-        [self saveData];
-     [self performSegueWithIdentifier:@"DetailView" sender:nil];
-        
-    // 删除
-    } else if (buttonIndex == 1) {
-        [self.navigationController popToRootViewControllerAnimated:YES];
+    if (actionSheet.tag == 1)
+    {
+        // 保存
+        if (buttonIndex == 0)
+        {
+            [self saveData];
+            [self performSegueWithIdentifier:@"DetailView" sender:nil];
+        } else if (buttonIndex == 1)
+        {
+            // 不保存退出
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }
+    }else if(actionSheet.tag == 2)
+    {
+        if (buttonIndex == 0)
+        {
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }
     }
 }
 
@@ -149,6 +174,10 @@
     }
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    [(DetailViewController *)[segue destinationViewController] setRun:self.run];
+}
 #pragma mark - CLLocationManager  &  mapView
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
