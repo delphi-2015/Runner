@@ -13,12 +13,12 @@ static const int idealSmoothReachSize = 33; // about 133 locations/mi
 + (NSArray *)colorSegmentsForLocations:(NSArray *)locations
 {
     if (locations.count == 1){
-        Location *loc      = [locations firstObject];
+        Location *loc = [locations firstObject];
         CLLocationCoordinate2D coords[2];
-        coords[0].latitude      = loc.latitude.doubleValue;
-        coords[0].longitude     = loc.longitude.doubleValue;
-        coords[1].latitude      = loc.latitude.doubleValue;
-        coords[1].longitude     = loc.longitude.doubleValue;
+        coords[0].latitude = loc.latitude.doubleValue;
+        coords[0].longitude = loc.longitude.doubleValue;
+        coords[1].latitude = loc.latitude.doubleValue;
+        coords[1].longitude = loc.longitude.doubleValue;
         
         ColorPolyline *segment = [ColorPolyline polylineWithCoordinates:coords count:2];
         segment.color = [UIColor blackColor];
@@ -167,10 +167,10 @@ static const int idealSmoothReachSize = 33; // about 133 locations/mi
     float distance = meters/unitDivider;
     if (distance>10.0)
     {
-         return [NSString stringWithFormat:@"%.1f %@", distance, unitName];
+        return [NSString stringWithFormat:@"%.1f %@", distance, unitName];
     }else
     {
-    return [NSString stringWithFormat:@"%.2f %@", distance, unitName];
+        return [NSString stringWithFormat:@"%.2f %@", distance, unitName];
     }
 }
 

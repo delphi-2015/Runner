@@ -20,6 +20,10 @@
 		489738B11B59DC98002A438B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 489738B01B59DC98002A438B /* MainViewController.m */; };
 		489738B31B5B2A3D002A438B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 489738B21B5B2A3D002A438B /* MapKit.framework */; };
 		489738B61B5B31F3002A438B /* RunningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 489738B51B5B31F3002A438B /* RunningViewController.m */; };
+		48D8932A1B6B643600719997 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D893291B6B643600719997 /* ScrollViewController.m */; };
+		48D893E71B6B7B4200719997 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48D893E61B6B7AB900719997 /* Charts.framework */; };
+		48D893E81B6B7B4200719997 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 48D893E61B6B7AB900719997 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		48D893EE1B6B878400719997 /* BarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D893ED1B6B878400719997 /* BarChartViewController.m */; };
 		48F7FA221B5B75ED007CF8B2 /* MathData.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA211B5B75ED007CF8B2 /* MathData.m */; };
 		48F7FA251B5BB86D007CF8B2 /* WGS84TOGCJ02.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA241B5BB86D007CF8B2 /* WGS84TOGCJ02.m */; };
 		48F7FA2B1B5BE7E6007CF8B2 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA2A1B5BE7E6007CF8B2 /* DetailViewController.m */; };
@@ -42,7 +46,35 @@
 			remoteGlobalIDString = 489738721B58AAE8002A438B;
 			remoteInfo = Runner;
 		};
+		48D893E51B6B7AB900719997 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48D893E11B6B7AB900719997 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5BA8EC401A9D14DC00CE82E1;
+			remoteInfo = Charts;
+		};
+		48D893E91B6B7B4300719997 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48D893E11B6B7AB900719997 /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BA8EC3F1A9D14DC00CE82E1;
+			remoteInfo = Charts;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		48D893EB1B6B7B4300719997 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				48D893E81B6B7B4200719997 /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		48645F8A1B6854B10098EEE8 /* DistanceAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistanceAnnotation.h; sourceTree = "<group>"; };
@@ -68,6 +100,11 @@
 		489738B21B5B2A3D002A438B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		489738B41B5B31F3002A438B /* RunningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunningViewController.h; sourceTree = "<group>"; };
 		489738B51B5B31F3002A438B /* RunningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunningViewController.m; sourceTree = "<group>"; };
+		48D893281B6B643600719997 /* ScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
+		48D893291B6B643600719997 /* ScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewController.m; sourceTree = "<group>"; };
+		48D893E11B6B7AB900719997 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = ../Charts/Charts.xcodeproj; sourceTree = "<group>"; };
+		48D893EC1B6B878400719997 /* BarChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarChartViewController.h; sourceTree = "<group>"; };
+		48D893ED1B6B878400719997 /* BarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarChartViewController.m; sourceTree = "<group>"; };
 		48F7FA201B5B75ED007CF8B2 /* MathData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathData.h; sourceTree = "<group>"; };
 		48F7FA211B5B75ED007CF8B2 /* MathData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathData.m; sourceTree = "<group>"; };
 		48F7FA231B5BB86D007CF8B2 /* WGS84TOGCJ02.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGS84TOGCJ02.h; sourceTree = "<group>"; };
@@ -100,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				489738B31B5B2A3D002A438B /* MapKit.framework in Frameworks */,
+				48D893E71B6B7B4200719997 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +158,7 @@
 				489738751B58AAE8002A438B /* Runner */,
 				489738921B58AAE8002A438B /* RunnerTests */,
 				489738741B58AAE8002A438B /* Products */,
+				48D893E11B6B7AB900719997 /* Charts.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -193,6 +232,10 @@
 			children = (
 				48F7FA2F1B5DDD0F007CF8B2 /* ActivityViewController.h */,
 				48F7FA301B5DDD0F007CF8B2 /* ActivityViewController.m */,
+				48D893281B6B643600719997 /* ScrollViewController.h */,
+				48D893291B6B643600719997 /* ScrollViewController.m */,
+				48D893EC1B6B878400719997 /* BarChartViewController.h */,
+				48D893ED1B6B878400719997 /* BarChartViewController.m */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -238,6 +281,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		48D893E21B6B7AB900719997 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				48D893E61B6B7AB900719997 /* Charts.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		48F7FA3F1B5F5B43007CF8B2 /* JBChartView */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,10 +331,12 @@
 				4897386F1B58AAE8002A438B /* Sources */,
 				489738701B58AAE8002A438B /* Frameworks */,
 				489738711B58AAE8002A438B /* Resources */,
+				48D893EB1B6B7B4300719997 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				48D893EA1B6B7B4300719997 /* PBXTargetDependency */,
 			);
 			name = Runner;
 			productName = Runner;
@@ -342,6 +395,12 @@
 			mainGroup = 4897386A1B58AAE8002A438B;
 			productRefGroup = 489738741B58AAE8002A438B /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 48D893E21B6B7AB900719997 /* Products */;
+					ProjectRef = 48D893E11B6B7AB900719997 /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				489738721B58AAE8002A438B /* Runner */,
@@ -349,6 +408,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		48D893E61B6B7AB900719997 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 48D893E51B6B7AB900719997 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		489738711B58AAE8002A438B /* Resources */ = {
@@ -375,6 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48D8932A1B6B643600719997 /* ScrollViewController.m in Sources */,
 				4897387C1B58AAE8002A438B /* AppDelegate.m in Sources */,
 				48F7FA731B5FB806007CF8B2 /* JBLineChartView.m in Sources */,
 				48F7FA311B5DDD0F007CF8B2 /* ActivityViewController.m in Sources */,
@@ -391,6 +461,7 @@
 				489738AE1B58AC20002A438B /* Runner.xcdatamodeld in Sources */,
 				48F7FA581B5F68F0007CF8B2 /* ColorPolyline.m in Sources */,
 				48F7FA251B5BB86D007CF8B2 /* WGS84TOGCJ02.m in Sources */,
+				48D893EE1B6B878400719997 /* BarChartViewController.m in Sources */,
 				48F7FA4B1B5F5B43007CF8B2 /* JBChartInformationView.m in Sources */,
 				48F7FA721B5FB806007CF8B2 /* JBChartView.m in Sources */,
 				489738B61B5B31F3002A438B /* RunningViewController.m in Sources */,
@@ -413,6 +484,11 @@
 			isa = PBXTargetDependency;
 			target = 489738721B58AAE8002A438B /* Runner */;
 			targetProxy = 489738901B58AAE8002A438B /* PBXContainerItemProxy */;
+		};
+		48D893EA1B6B7B4300719997 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = 48D893E91B6B7B4300719997 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -520,6 +596,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -530,6 +607,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -540,6 +618,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -559,6 +638,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

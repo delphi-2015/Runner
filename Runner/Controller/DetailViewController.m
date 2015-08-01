@@ -8,6 +8,7 @@
 #import "ColorPolyline.h"
 #import "MapDetialView.h"
 #import "DistanceAnnotation.h"
+#import "ScrollViewController.h"
 
 
 @interface DetailViewController ()<MKMapViewDelegate,JBLineChartViewDelegate,JBLineChartViewDataSource>
@@ -35,7 +36,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //设定navigation背景透明
+    //设定navigation背景透明以及标题内容
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"NavBar-iPhone.png" ]forBarMetrics:UIBarMetricsCompact];
     [self getBackView:self.navigationController.navigationBar];
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
@@ -59,6 +60,14 @@
     [self.JBLineChartView reloadData];
     [self.JBLineChartView setState:JBChartViewStateCollapsed];
     
+    if ([self.navigationController.parentViewController isKindOfClass:[ScrollViewController class]])
+    {
+        ScrollViewController *parent = (ScrollViewController *)self.navigationController.parentViewController;
+        parent.pageControl.hidden = YES;
+        parent.scrollView.scrollEnabled = NO;
+    }
+    
+    self.tabBarController.tabBar.hidden = YES;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -66,10 +75,16 @@
     [super viewDidAppear:animated];
     [self.JBLineChartView setState:JBChartViewStateExpanded animated:YES];
     [self loadMap];
+    
    // dispatch_async(dispatch_get_global_queue(0, 0), ^{[self loadMap];});
 }
 
-//相当烂！！
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+}
+
+//相当囧！！
 - (void)getBackView :(UIView *)view
 {
     for (UIView *sview in view.subviews)
@@ -177,20 +192,6 @@ didSelectChartAtIndex:(NSInteger)index
         titleText = [NSString stringWithFormat:@"%.2f", speedValue.doubleValue*3.6];
     }
     [self.JBChartInfoView setTitleText:titleText unitText:[@" " stringByAppendingString:@"km/h"]];
-    
-//    [self.JBChartInfoView setValueText:valueText unitText:[@" " stringByAppendingString:@"km/h"]];
-    
-//    double distanceValue = [[self.disArray objectAtIndex:index] doubleValue]/1000.0;
-//    NSString *titleText = [[NSString alloc] init];
-//    if (distanceValue > 10.0) {
-//        titleText = [NSString stringWithFormat:@"%.1f", distanceValue];
-//    }
-//    else {
-//        titleText = [NSString stringWithFormat:@"%.2f", distanceValue];
-//    }
-//    [self.JBChartInfoView setTitleText:titleText unitText:[@" " stringByAppendingString:@"km"]];
-    
-
     
     //添加移动annotation
     MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];

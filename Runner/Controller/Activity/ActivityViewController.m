@@ -4,6 +4,7 @@
 #import "ActivityCell.h"
 #import "Run.h"
 #import "DetailViewController.h"
+#import "ScrollViewController.h"
 
 @interface ActivityViewController ()
 
@@ -17,29 +18,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     self.managedObjectContext = [appDelegate managedObjectContext];
     
     UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithTitle:@"" style:UIBarButtonItemStyleDone target:nil action:nil];
     self.navigationItem.backBarButtonItem = item;
-    
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height, self.view.frame.size.width, 50)];
-    [button setBackgroundColor:[UIColor redColor]];
-    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    button.titleLabel.font = [UIFont systemFontOfSize:28];
-    [button setTitle:@"跑步数据" forState:UIControlStateNormal];
-    button.layer.cornerRadius = 20.0;
-    
-    self.tableView.tableHeaderView = button;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
  
+    ScrollViewController *parent = (ScrollViewController *)self.navigationController.parentViewController;
+    parent.pageControl.hidden = NO;
+    parent.scrollView.scrollEnabled = YES;
+    
     [self loadData];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    self.tabBarController.tabBar.hidden = NO;
 }
 
 - (void)loadData
@@ -80,7 +81,7 @@
 }
 
 #pragma mark - ActivityCell Edit
-
+/*
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
 }
@@ -118,7 +119,7 @@
     }
     
 }
-
+*/
 
 #pragma mark - Navigation
 
