@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		485983081B7051D900AA9B8D /* SettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 485983071B7051D900AA9B8D /* SettingTableViewController.m */; };
+		4859830B1B70576A00AA9B8D /* WeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4859830A1B70576A00AA9B8D /* WeightViewController.m */; };
+		4859830E1B70578800AA9B8D /* HeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4859830D1B70578800AA9B8D /* HeightViewController.m */; };
 		48645F8C1B6854B10098EEE8 /* DistanceAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 48645F8B1B6854B10098EEE8 /* DistanceAnnotation.m */; };
 		489738791B58AAE8002A438B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 489738781B58AAE8002A438B /* main.m */; };
 		4897387C1B58AAE8002A438B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4897387B1B58AAE8002A438B /* AppDelegate.m */; };
@@ -77,6 +80,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		485983061B7051D900AA9B8D /* SettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewController.h; sourceTree = "<group>"; };
+		485983071B7051D900AA9B8D /* SettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewController.m; sourceTree = "<group>"; };
+		485983091B70576A00AA9B8D /* WeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightViewController.h; sourceTree = "<group>"; };
+		4859830A1B70576A00AA9B8D /* WeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightViewController.m; sourceTree = "<group>"; };
+		4859830C1B70578800AA9B8D /* HeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeightViewController.h; sourceTree = "<group>"; };
+		4859830D1B70578800AA9B8D /* HeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeightViewController.m; sourceTree = "<group>"; };
 		48645F8A1B6854B10098EEE8 /* DistanceAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistanceAnnotation.h; sourceTree = "<group>"; };
 		48645F8B1B6854B10098EEE8 /* DistanceAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistanceAnnotation.m; sourceTree = "<group>"; };
 		489738731B58AAE8002A438B /* Runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Runner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -254,6 +263,12 @@
 		489738A21B58AC20002A438B /* SettingView */ = {
 			isa = PBXGroup;
 			children = (
+				485983061B7051D900AA9B8D /* SettingTableViewController.h */,
+				485983071B7051D900AA9B8D /* SettingTableViewController.m */,
+				485983091B70576A00AA9B8D /* WeightViewController.h */,
+				4859830A1B70576A00AA9B8D /* WeightViewController.m */,
+				4859830C1B70578800AA9B8D /* HeightViewController.h */,
+				4859830D1B70578800AA9B8D /* HeightViewController.m */,
 			);
 			path = SettingView;
 			sourceTree = "<group>";
@@ -449,6 +464,7 @@
 				48F7FA731B5FB806007CF8B2 /* JBLineChartView.m in Sources */,
 				48F7FA311B5DDD0F007CF8B2 /* ActivityViewController.m in Sources */,
 				48F7FA4D1B5F5B43007CF8B2 /* JBLineChartFooterView.m in Sources */,
+				485983081B7051D900AA9B8D /* SettingTableViewController.m in Sources */,
 				48F7FA221B5B75ED007CF8B2 /* MathData.m in Sources */,
 				489738B11B59DC98002A438B /* MainViewController.m in Sources */,
 				489738791B58AAE8002A438B /* main.m in Sources */,
@@ -459,10 +475,12 @@
 				48F7FA711B5FB806007CF8B2 /* JBBarChartView.m in Sources */,
 				489738AC1B58AC20002A438B /* Location.m in Sources */,
 				489738AE1B58AC20002A438B /* Runner.xcdatamodeld in Sources */,
+				4859830B1B70576A00AA9B8D /* WeightViewController.m in Sources */,
 				48F7FA581B5F68F0007CF8B2 /* ColorPolyline.m in Sources */,
 				48F7FA251B5BB86D007CF8B2 /* WGS84TOGCJ02.m in Sources */,
 				48D893EE1B6B878400719997 /* BarChartViewController.m in Sources */,
 				48F7FA4B1B5F5B43007CF8B2 /* JBChartInformationView.m in Sources */,
+				4859830E1B70578800AA9B8D /* HeightViewController.m in Sources */,
 				48F7FA721B5FB806007CF8B2 /* JBChartView.m in Sources */,
 				489738B61B5B31F3002A438B /* RunningViewController.m in Sources */,
 				48F7FA791B61FA7E007CF8B2 /* MapDetialView.m in Sources */,

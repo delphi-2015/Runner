@@ -131,7 +131,6 @@ static UIColor *kJBLineChartViewDefaultLineColor = nil;
      * Subview rectangle calculations
      */
     CGRect mainViewRect = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width, [self availableHeight]);
-
     /*
      * The data collection holds all position and marker information:
      * constructed via datasource and delegate functions

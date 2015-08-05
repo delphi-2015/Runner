@@ -11,5 +11,5 @@
 @interface MapDetialView : NSObject
 
 + (NSArray *)annotationsForlocationArray:(NSArray *)locations distanceArray:(NSArray *)distance;
-
++ (NSArray *)colorSegmentsForLocations:(NSArray *)locations;
 @end

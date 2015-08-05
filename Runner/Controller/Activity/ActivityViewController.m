@@ -21,6 +21,7 @@
     AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     self.managedObjectContext = [appDelegate managedObjectContext];
     
+    //设置返回按钮无文字
     UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithTitle:@"" style:UIBarButtonItemStyleDone target:nil action:nil];
     self.navigationItem.backBarButtonItem = item;
 }
@@ -28,12 +29,8 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
- 
-    ScrollViewController *parent = (ScrollViewController *)self.navigationController.parentViewController;
-    parent.pageControl.hidden = NO;
-    parent.scrollView.scrollEnabled = YES;
-    
     [self loadData];
+    [self.tableView reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -41,6 +38,10 @@
     [super viewDidAppear:animated];
     
     self.tabBarController.tabBar.hidden = NO;
+    
+    ScrollViewController *parent = (ScrollViewController *)self.navigationController.parentViewController;
+    parent.pageControl.hidden = NO;
+    parent.scrollView.scrollEnabled = YES;
 }
 
 - (void)loadData
@@ -126,6 +127,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.destinationViewController isKindOfClass:[DetailViewController class]]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
         Run *run = [self.runArray objectAtIndex:indexPath.row];
         [(DetailViewController *)[segue destinationViewController] setRun:run];
     }

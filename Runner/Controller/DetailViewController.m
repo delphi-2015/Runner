@@ -65,6 +65,12 @@
         ScrollViewController *parent = (ScrollViewController *)self.navigationController.parentViewController;
         parent.pageControl.hidden = YES;
         parent.scrollView.scrollEnabled = NO;
+    }else
+    {
+        UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(10, 10, 40, 40)];
+        [button setBackgroundImage:[UIImage imageNamed:@"mapPin"] forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
     }
     
     self.tabBarController.tabBar.hidden = YES;
@@ -82,6 +88,11 @@
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
+}
+
+- (void)back
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 //相当囧！！
@@ -263,7 +274,7 @@ didUnselectChartAtIndex:(NSInteger)index
         [self.mapView setRegion:[self mapRegion]];
         
         //[self.mapView addOverlay:[self polyLine]];
-        NSArray *colorSegmentArray = [MathData colorSegmentsForLocations:self.locArray];
+        NSArray *colorSegmentArray = [MapDetialView colorSegmentsForLocations:self.locArray];
         [self.mapView addOverlays:colorSegmentArray];
         [self.mapView addAnnotations:[MapDetialView annotationsForlocationArray:self.locArray distanceArray:self.disArray]];
     }else

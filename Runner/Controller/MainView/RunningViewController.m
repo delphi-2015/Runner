@@ -90,6 +90,7 @@
 
 - (void)perSecond
 {
+    //每秒数据刷新
     self.seconds++;
     self.timeLabel.text = [NSString stringWithFormat:@"%@", [MathData stringifySecondCount:self.seconds usingLongFormat:NO]];
     self.disLabel.text = [NSString stringWithFormat:@"%@", [MathData stringifyDistance:self.distance]];
@@ -99,7 +100,8 @@
 
 - (IBAction)stopBtnPressed:(id)sender
 {
-    if (self.distance)
+    //按下stop后有数据可以保存，没有删除或取消
+    if (self.distance > 50)
     {
         UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self
                                                         cancelButtonTitle:@"取消 " destructiveButtonTitle:nil
@@ -119,6 +121,8 @@
 
 
 }
+
+#pragma mark - actionSheet delegete
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
@@ -145,6 +149,7 @@
 
 - (void)saveData
 {
+    //将数据保存到coredata
     Run *newRun = [NSEntityDescription insertNewObjectForEntityForName:@"Run"
                                                 inManagedObjectContext:self.managedObjectContext];
     
@@ -176,9 +181,12 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    //传递要刚跑完的数据给detail现实界面
     [(DetailViewController *)[segue destinationViewController] setRun:self.run];
 }
+
 #pragma mark - CLLocationManager  &  mapView
+
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     CLLocation *loc=[locations lastObject];
@@ -205,6 +213,29 @@
                     [self.mapView addOverlay:[MKPolyline polylineWithCoordinates:coords count:2]];
                 }
                 [self.locations addObject:newLocation];
+            }
+        }
+    }else
+    {
+        for (CLLocation *new in locations)
+        {
+            
+            NSDate *eventDate = new.timestamp;
+            NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
+            
+            if (fabs(howRecent) < 10.0 && new.horizontalAccuracy < 20)
+            {
+                if (self.locations.count > 0)
+                {
+                    self.distance += [new distanceFromLocation:self.locations.lastObject];
+                    
+                    CLLocationCoordinate2D coords[2];
+                    coords[0] = ((CLLocation *)self.locations.lastObject).coordinate;
+                    coords[1] = new.coordinate;
+                    
+                    [self.mapView addOverlay:[MKPolyline polylineWithCoordinates:coords count:2]];
+                }
+                [self.locations addObject:new];
             }
         }
     }

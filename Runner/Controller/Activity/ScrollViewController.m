@@ -95,13 +95,13 @@
     if (page >= [self.childViewControllers count])
         return;
     
-    // replace the placeholder if necessary
+    // 替换占位符
     UIViewController *controller = [self.childViewControllers objectAtIndex:page];
     if (controller == nil) {
         return;
     }
     
-    // add the controller's view to the scroll view
+    // 将controller添加到scrollview
     if (controller.view.superview == nil) {
         CGRect frame = self.scrollView.frame;
         frame.origin.x = frame.size.width * page;
@@ -121,7 +121,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    // Switch the indicator when more than 50% of the previous/next page is visible
+    //当滑动超过50%的时候就切换视图
     CGFloat pageWidth = self.scrollView.frame.size.width;
     int page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     page = page > 1 ? 1 : page;

@@ -30,7 +30,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-//获取跑步数据
+    //从coredata获取跑步数据
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Run" inManagedObjectContext:self.managedObjectContext];
     
@@ -43,10 +43,19 @@
     [self setLabelData];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    self.tabBarController.tabBar.hidden = NO;
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     RunningViewController *controller=segue.destinationViewController;
     controller.managedObjectContext=self.managedObjectContext;
+    
+    //隐藏tabbar
     [controller setHidesBottomBarWhenPushed:YES];
 }
 
@@ -54,15 +63,19 @@
 {
     int seconds = 0;
     float distance = 0;
+    float calorie = 0;
     NSInteger con = self.runArray.count;
     for (Run *run in self.runArray)
     {
+        calorie += [MathData valueifDistance:run.distance.floatValue andTime:run.duration.intValue];
         seconds += run.duration.intValue;
         distance += run.distance.floatValue;
     }
     
     self.totalDistance.text = [MathData stringifyDistance:distance];
-    self.totalRuns.text = [NSString stringWithFormat:@"%ld",(long)con];
+//  self.totalDistance.font = [UIFont fontWithName:@"HelveticaNeue-CondensedBold" size:85];
+    self.totalRuns.text = [[NSString stringWithFormat:@"%ld",(long)con] stringByAppendingString:@"次"];
     self.avgSpeed.text = [MathData stringifyAvgPaceFromDist:distance overTime:seconds ifleft:NO];
+    self.avgCalorie.text = [[NSString stringWithFormat:@"%.1f",(con == 0?0:calorie/con)] stringByAppendingString:@"cal"];
 }
 @end
