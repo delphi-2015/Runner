@@ -1,11 +1,3 @@
-//
-//  SettingTableViewController.m
-//  Runner
-//
-//  Created by delphiwu on 15/8/4.
-//  Copyright (c) 2015年 Tech. All rights reserved.
-//
-
 #import "SettingTableViewController.h"
 
 @interface SettingTableViewController ()
@@ -21,11 +13,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+   
+    [self setNavigationItem];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setNavigationItem
+{
+    //bar颜色
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:100.0/255.0 green:254.0/255.0 blue:254.0/255.0 alpha:1.0f]];
+    [self.navigationController.navigationBar setTranslucent:NO];
+    //返回按钮
+    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithTitle:@"" style:UIBarButtonItemStyleDone target:nil action:nil];
+    self.navigationItem.backBarButtonItem = item;
+    //title字体
+    self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObject:[UIFont fontWithName:@"HelveticaNeue-CondensedBold" size:19.0]forKey:NSFontAttributeName];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -62,10 +63,6 @@
     }
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{   //隐藏tabbar
-    [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
-}
 - (IBAction)sexSelect:(id)sender
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -73,4 +70,20 @@
     [defaults synchronize];
 }
 
+#pragma mark - navigationcontroller
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{   //隐藏tabbar
+    [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
+}
+
+#pragma mark - tableView delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ((indexPath.section == 1) && (indexPath.row == 0))
+    {
+        NSURL *appStoreURL = [NSURL URLWithString:@"https://itunes.apple.com/cn/app/runner/id1028192410?mt=8"];
+        [[UIApplication sharedApplication] openURL:appStoreURL];
+    }
+}
 @end

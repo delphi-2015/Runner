@@ -1,11 +1,3 @@
-//
-//  ScrollViewController.m
-//  Runner
-//
-//  Created by delphiwu on 15/7/31.
-//  Copyright (c) 2015年 Tech. All rights reserved.
-//
-
 #import "ScrollViewController.h"
 
 @interface ScrollViewController ()
@@ -19,23 +11,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+ 
     [self.scrollView setPagingEnabled:YES];
     [self.scrollView setScrollEnabled:YES];
     [self.scrollView setDelegate:self];
     self.scrollView.showsHorizontalScrollIndicator = NO;
     [self addChildViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"navigation"]];
     [self addChildViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"analyzeView"]];
-}
-
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-    if (self=[super initWithCoder:aDecoder]) {
-        [self.pageControl setNumberOfPages:2];
-        [self.pageControl setCurrentPage:0];
-        self.lastPageNum = 0;
-    }
-    return self;
+    
+    [self.pageControl setNumberOfPages:2];
+    [self.pageControl setCurrentPage:0];
+    self.lastPageNum = 0;
 }
 
 - (void)viewWillAppear:(BOOL)animated

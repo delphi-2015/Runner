@@ -1,11 +1,3 @@
-//
-//  BarChartViewController.m
-//  Runner
-//
-//  Created by delphiwu on 15/7/31.
-//  Copyright (c) 2015年 Tech. All rights reserved.
-//
-
 #import "BarChartViewController.h"
 #import "Run.h"
 #import "AppDelegate.h"
@@ -103,7 +95,6 @@
 
     [self setDataCount:(int)self.monthArray.count range:[self getMaxdistance:self.monthArray]];
 
-  
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -111,12 +102,6 @@
     [super viewDidAppear:animated];
     [_chartView animateWithXAxisDuration:1.0 yAxisDuration:1.0];
   
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - initialize Data
@@ -127,6 +112,7 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Run" inManagedObjectContext:self.managedObjectContext];
     
     [fetchRequest setEntity:entity];
+    //这次得降序提取数据了
     NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"timestamp" ascending:YES];
     [fetchRequest setSortDescriptors:@[sort]]  ;
     

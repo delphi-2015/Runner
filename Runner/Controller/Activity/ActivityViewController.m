@@ -21,9 +21,7 @@
     AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     self.managedObjectContext = [appDelegate managedObjectContext];
     
-    //设置返回按钮无文字
-    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithTitle:@"" style:UIBarButtonItemStyleDone target:nil action:nil];
-    self.navigationItem.backBarButtonItem = item;
+    [self setNavigationItem];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -38,18 +36,29 @@
     [super viewDidAppear:animated];
     
     self.tabBarController.tabBar.hidden = NO;
-    
+    // 设置ScrollViewController的东东
     ScrollViewController *parent = (ScrollViewController *)self.navigationController.parentViewController;
     parent.pageControl.hidden = NO;
     parent.scrollView.scrollEnabled = YES;
 }
 
+- (void)setNavigationItem
+{
+    //设置返回按钮无文字
+    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithTitle:@"" style:UIBarButtonItemStyleDone target:nil action:nil];
+    self.navigationItem.backBarButtonItem = item;
+    //设置title字体
+    self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObject:[UIFont fontWithName:@"HelveticaNeue-CondensedBold" size:19.0]forKey:NSFontAttributeName];
+}
+
 - (void)loadData
 {
+    //通过coredata获取历史跑步数据
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Run" inManagedObjectContext:self.managedObjectContext];
     
     [fetchRequest setEntity:entity];
+    //按照timestamp时间戳生序提取数据
     NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"timestamp" ascending:NO];
     [fetchRequest setSortDescriptors:@[sort]]  ;
     
@@ -76,7 +85,8 @@
     cell.distanceLabel.text = [MathData stringifyDistance:run.distance.floatValue];
     cell.timeLabel.text = [MathData stringifySecondCount:run.duration.intValue usingLongFormat:NO];
     cell.paceLabel.text = [MathData stringifyAvgPaceFromDist:run.distance.floatValue overTime:run.duration.intValue ifleft:NO];
-     
+    //不让渐变选择色
+    [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
     
     return cell;
 }
@@ -118,16 +128,16 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
-    
 }
 */
 
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.destinationViewController isKindOfClass:[DetailViewController class]]) {
+    if ([segue.destinationViewController isKindOfClass:[DetailViewController class]])
+    {
+        //传递数据给详细显示界面使用
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
         Run *run = [self.runArray objectAtIndex:indexPath.row];
         [(DetailViewController *)[segue destinationViewController] setRun:run];
     }

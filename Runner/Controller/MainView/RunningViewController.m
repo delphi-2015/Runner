@@ -1,11 +1,3 @@
-//
-//  RunningViewController.m
-//  Runner
-//
-//  Created by delphiwu on 15/7/19.
-//  Copyright (c) 2015年 Tech. All rights reserved.
-//
-
 #import "RunningViewController.h"
 #import "Run.h"
 #import "Location.h"
@@ -24,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *stopBtn;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
+@property (strong,nonatomic) MKPointAnnotation *point;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) NSMutableArray *locations;
 @property (strong, nonatomic) NSTimer *timer;
@@ -38,12 +31,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //CLLocationManagerDelegate, MKMapViewDelegate设定
     [self setup];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -51,6 +40,12 @@
     [super viewDidAppear:animated];
     
     [self startRun];
+}
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.timer invalidate];
 }
 
 - (void)setup
@@ -100,7 +95,7 @@
 
 - (IBAction)stopBtnPressed:(id)sender
 {
-    //按下stop后有数据可以保存，没有删除或取消
+    //按下stop后有数据（路程超过50m算有效）可以保存，没有删除或取消
     if (self.distance > 50)
     {
         UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self
@@ -149,7 +144,7 @@
 
 - (void)saveData
 {
-    //将数据保存到coredata
+    //将数据通过coredata保存
     Run *newRun = [NSEntityDescription insertNewObjectForEntityForName:@"Run"
                                                 inManagedObjectContext:self.managedObjectContext];
     
@@ -195,8 +190,8 @@
     {
         for (CLLocation *new in locations)
         {
+            //火星坐标系的转换
             CLLocation *newLocation = [WGS84TOGCJ02 transformFromWGSToGCJ:new];
-        
             NSDate *eventDate = newLocation.timestamp;
             NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
         
@@ -255,6 +250,14 @@
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
+    [mapView removeAnnotation:self.point];
+    
+    // 添加移动时的追踪annotation
+    MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
+    annotation.coordinate = userLocation.coordinate;
+    self.point = annotation;
+    [mapView addAnnotation:self.point];
+    
     self.mapView.centerCoordinate = userLocation.coordinate;
 }
 @end

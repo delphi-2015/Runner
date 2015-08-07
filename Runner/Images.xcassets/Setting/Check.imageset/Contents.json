@@ -2,12 +2,13 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "Check.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "mapPin@2x.png"
+      "filename" : "Check@2x.png"
     },
     {
       "idiom" : "universal",
