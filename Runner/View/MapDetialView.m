@@ -24,7 +24,7 @@
         DistanceAnnotation *annotationlast = [[DistanceAnnotation alloc]init];
         Location *laslocation = [locations lastObject];
         annotationlast.coordinate = CLLocationCoordinate2DMake(laslocation.latitude.doubleValue, laslocation.longitude.doubleValue);
-        annotationlast.image = [UIImage imageNamed:@"start"];
+        annotationlast.image = [UIImage imageNamed:@"end"];
         [annotations addObject:annotationlast];
         return annotations;
     }
@@ -65,75 +65,8 @@
     return annotations;
 }
 
-+ (NSArray *)colorSegmentsForLocations:(NSArray *)locations andSpeeds:(NSArray *)smoothSpeeds
++ (NSArray *)colorSegmentsForLocations:(NSArray *)locations speeds:(NSArray *)smoothSpeeds
 {
-//    if (locations.count == 1){
-//        Location *loc      = [locations firstObject];
-//        CLLocationCoordinate2D coords[2];
-//        coords[0].latitude      = loc.latitude.doubleValue;
-//        coords[0].longitude     = loc.longitude.doubleValue;
-//        coords[1].latitude      = loc.latitude.doubleValue;
-//        coords[1].longitude     = loc.longitude.doubleValue;
-//        
-//        ColorPolyline *segment = [ColorPolyline polylineWithCoordinates:coords count:2];
-//        segment.color = [UIColor blackColor];
-//        return @[segment];
-//    }
-//    
-//    // make array of all speeds
-//    NSMutableArray *rawSpeeds = [NSMutableArray array];
-//    
-//    for (int i = 1; i < locations.count; i++) {
-//        Location *firstLoc = [locations objectAtIndex:(i-1)];
-//        Location *secondLoc = [locations objectAtIndex:i];
-//        
-//        CLLocation *firstLocCL = [[CLLocation alloc] initWithLatitude:firstLoc.latitude.doubleValue longitude:firstLoc.longitude.doubleValue];
-//        CLLocation *secondLocCL = [[CLLocation alloc] initWithLatitude:secondLoc.latitude.doubleValue longitude:secondLoc.longitude.doubleValue];
-//        
-//        double distance = [secondLocCL distanceFromLocation:firstLocCL];
-//        double time = [secondLoc.timestamp timeIntervalSinceDate:firstLoc.timestamp];
-//        double speed = distance/time;
-//        
-//        [rawSpeeds addObject:[NSNumber numberWithDouble:speed]];
-//    }
-//    
-    // smooth the raw speeds
-//    NSMutableArray *smoothSpeeds = [NSMutableArray array];
-//    
-//    for (int i = 0; i < rawSpeeds.count; i++) {
-//        
-//        // set to ideal size
-//        int lowerBound = i - idealSmoothReachSize / 2;
-//        int upperBound = i + idealSmoothReachSize / 2;
-//        
-//        // scale back reach as necessary
-//        if (lowerBound < 0) {
-//            lowerBound = 0;
-//        }
-//        
-//        if (upperBound > ((int)rawSpeeds.count - 1)) {
-//            upperBound = (int)rawSpeeds.count - 1;
-//        }
-//        
-//        // define range for average
-//        NSRange range;
-//        range.location = lowerBound;
-//        range.length = upperBound - lowerBound;
-//        
-//        // get values to average
-//        NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:range];
-//        NSArray *relevantSpeeds = [rawSpeeds objectsAtIndexes:indexSet];
-//        
-//        double total = 0.0;
-//        
-//        for (NSNumber *speed in relevantSpeeds) {
-//            total += speed.doubleValue;
-//        }
-//        
-//        double smoothAverage = total / (double)(upperBound - lowerBound);
-//        
-//        [smoothSpeeds addObject:[NSNumber numberWithDouble:smoothAverage]];
-//    }
     
     // 排列速度数组
     NSArray *sortedArray = [smoothSpeeds sortedArrayUsingSelector:@selector(compare:)];

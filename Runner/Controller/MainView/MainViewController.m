@@ -59,7 +59,7 @@
     NSInteger con = self.runArray.count;
     for (Run *run in self.runArray)
     {
-        calorie += [MathData valueifDistance:run.distance.floatValue andTime:run.duration.intValue];
+        calorie +=[MathData valueifDistance:run.distance.floatValue Time:run.duration.intValue];
         seconds += run.duration.intValue;
         distance += run.distance.floatValue;
     }

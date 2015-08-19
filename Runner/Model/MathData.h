@@ -1,4 +1,3 @@
-
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
@@ -9,6 +8,6 @@
 + (NSString *)stringifyDistance:(float)meters;
 + (NSString *)stringifySecondCount:(int)seconds usingLongFormat:(BOOL)longFormat;
 + (NSString *)stringifyAvgPaceFromDist:(float)meters overTime:(int)seconds ifleft:(BOOL)left;
-+ (float)valueifDistance:(float)meters andTime:(int)seconds;
++ (float)valueifDistance:(float)meters Time:(int)seconds;
 
 @end

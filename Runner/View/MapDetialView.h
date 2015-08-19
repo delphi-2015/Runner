@@ -11,5 +11,6 @@
 @interface MapDetialView : NSObject
 
 + (NSArray *)annotationsForlocationArray:(NSArray *)locations distanceArray:(NSArray *)distance;
-+ (NSArray *)colorSegmentsForLocations:(NSArray *)locations andSpeeds:(NSArray *)smoothSpeeds;
++ (NSArray *)colorSegmentsForLocations:(NSArray *)locations speeds:(NSArray *)smoothSpeeds;
+
 @end

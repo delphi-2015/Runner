@@ -45,6 +45,10 @@
 - (void) viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    
+    //停止更新位置
+    [self.locationManager stopUpdatingLocation];
+    //停止计时器
     [self.timer invalidate];
 }
 
@@ -114,7 +118,6 @@
         actionSheet.tag = 2;
     }
 
-
 }
 
 #pragma mark - actionSheet delegete
@@ -165,7 +168,7 @@
     
     newRun.locations = [NSOrderedSet orderedSetWithArray:locationArray];
     self.run = newRun;
-    
+
     // Save the context.
     NSError *error = nil;
     if (![self.managedObjectContext save:&error]) {

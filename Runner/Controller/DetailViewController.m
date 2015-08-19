@@ -26,12 +26,12 @@
 
 @implementation DetailViewController
 
-- (void)setRun:(Run *)run
-{
-    if (_run != run) {
-        _run=run;
-    }
-}
+//- (void)setRun:(Run *)run
+//{
+//    if (_run != run) {
+//        _run=run;
+//    }
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -48,9 +48,9 @@
     [self.JBLineChartView setState:JBChartViewStateCollapsed];
     
     //显示卡路里数据
-    self.calLabel.text = [[NSString stringWithFormat:@"%.1f",[MathData valueifDistance:self.run.distance.floatValue andTime:self.run.duration.intValue]]stringByAppendingString:@"kcal"];
+    self.calLabel.text = [[NSString stringWithFormat:@"%.1f",[MathData valueifDistance:self.run.distance.floatValue Time:self.run.duration.intValue]]stringByAppendingString:@"kcal"];
     
-    //判断父控件种类决定返回方式
+    //判断父控件种类决定返回按钮方式以及当前界面处理
     if ([self.navigationController.parentViewController isKindOfClass:[ScrollViewController class]])
     {
         ScrollViewController *parent = (ScrollViewController *)self.navigationController.parentViewController;
@@ -203,7 +203,7 @@
         [self.mapView setRegion:[self mapRegion]];
         
         //添加画线和里程显示annotations
-        NSArray *colorSegmentArray = [MapDetialView colorSegmentsForLocations:self.locArray andSpeeds:self.speedArray];
+        NSArray *colorSegmentArray = [MapDetialView colorSegmentsForLocations:self.locArray speeds:self.speedArray];
         [self.mapView addOverlays:colorSegmentArray];
         [self.mapView addAnnotations:[MapDetialView annotationsForlocationArray:self.locArray distanceArray:self.disArray]];
     }else

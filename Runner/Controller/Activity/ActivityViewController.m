@@ -139,7 +139,7 @@
         //传递数据给详细显示界面使用
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         Run *run = [self.runArray objectAtIndex:indexPath.row];
-        [(DetailViewController *)[segue destinationViewController] setRun:run];
+        [((DetailViewController *)[segue destinationViewController])setRun:run];
     }
 }
 

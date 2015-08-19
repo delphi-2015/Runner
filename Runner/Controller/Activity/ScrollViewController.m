@@ -33,7 +33,6 @@
     }
     
     self.pageControl.currentPage = self.lastPageNum;
-    [self.pageControl setNumberOfPages:[self.childViewControllers count]];
     
     UIViewController *viewController = [self.childViewControllers objectAtIndex:self.pageControl.currentPage];
     if (viewController.view.superview != nil) {

@@ -17,12 +17,12 @@ static float const metersInMile = 1609.344;
     // metric
     if (isMetric) {
         unitName = @"km";
-        // to get from meters to kilometers divide by this
+        // 设置 kilometers
         unitDivider = metersInKM;
         // U.S.
     } else {
         unitName = @"mi";
-        // to get from meters to miles divide by this
+        // 设置 miles
         unitDivider = metersInMile;
     }
     
@@ -94,7 +94,7 @@ static float const metersInMile = 1609.344;
     }
 }
 
-+ (float)valueifDistance:(float)meters andTime:(int)seconds
++ (float)valueifDistance:(float)meters Time:(int)seconds
 {
     float speed = seconds/meters*40/6; //分钟／400米
     return PERSON_WEIGHT*30/speed*seconds/3600;
