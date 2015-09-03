@@ -82,6 +82,7 @@ static UIColor *kJBChartInformationViewShadowColor = nil;
 
 - (id)initWithFrame:(CGRect)frame
 {
+    self = [super initWithFrame:frame];
     return [self layout:JBChartInformationViewLayoutHorizontal];
 }
 

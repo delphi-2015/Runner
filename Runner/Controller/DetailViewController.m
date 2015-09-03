@@ -17,10 +17,10 @@
 @property (weak, nonatomic) IBOutlet JBLineChartView *JBLineChartView;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UILabel *calLabel;
-@property (strong,nonatomic) NSArray *speedArray;
-@property (strong,nonatomic) NSArray *disArray;
-@property (strong,nonatomic) NSArray *locArray;
-@property (strong,nonatomic) MKPointAnnotation *point;
+@property (strong, nonatomic) NSArray *speedArray;
+@property (strong, nonatomic) NSArray *disArray;
+@property (strong, nonatomic) NSArray *locArray;
+@property (strong, nonatomic) MKPointAnnotation *point;
 
 @end
 
@@ -261,7 +261,7 @@ didSelectChartAtIndex:(NSInteger)index
     
     //添加速度数组
     NSNumber *speedValue = [self.speedArray objectAtIndex:index];
-    NSString *titleText = [[NSString alloc] init];
+    NSString *titleText;
     if ([speedValue doubleValue]*3.6 > 10.0)
     {
         titleText = [NSString stringWithFormat:@"%.1f", speedValue.doubleValue*3.6];
@@ -279,7 +279,7 @@ didSelectChartAtIndex:(NSInteger)index
     annotation.coordinate = CLLocationCoordinate2DMake(location.latitude.doubleValue, location.longitude.doubleValue);
     
     double distanceValue = [[self.disArray objectAtIndex:index] doubleValue]/1000.0;
-    NSString *title = [[NSString alloc] init];
+    NSString *title;
     if (distanceValue > 10.0)
     {
        title = [NSString stringWithFormat:@"%.1f", distanceValue];
