@@ -192,7 +192,7 @@
 
 - (void)setDataCount:(int)count range:(double)range
 {
-    NSMutableArray *xVals = [[NSMutableArray alloc] init];
+    NSMutableArray *xVals = [[NSMutableArray alloc]init];
     
     int y = (int)[self month:((Run *)self.runArray.firstObject).timestamp]-1;
     for (int i = 0; i < count; i++)
@@ -201,8 +201,7 @@
         y ++;
     }
     
-    NSMutableArray *yVals = [[NSMutableArray alloc] init];
-    
+    NSMutableArray *yVals = [[NSMutableArray alloc]init];
     for (int i = 0; i < count; i++)
     {
         double val = [[self.monthArray objectAtIndex:i] doubleValue]/1000.00;

@@ -515,7 +515,7 @@
             </objects>
             <point key="canvasLocation" x="1005" y="-522"/>
         </scene>
-        <!--活动记录-->
+        <!--跑步记录-->
         <scene sceneID="fJA-gl-HD5">
             <objects>
                 <tableViewController id="Y6B-gW-r8X" customClass="ActivityViewController" sceneMemberID="viewController">
@@ -578,7 +578,7 @@
                             <outlet property="delegate" destination="Y6B-gW-r8X" id="ygo-YE-yLv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="活动记录" id="0ff-hU-48d"/>
+                    <navigationItem key="navigationItem" title="跑步记录" id="0ff-hU-48d"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FMM-Ne-ePd" userLabel="First Responder" sceneMemberID="firstResponder"/>
