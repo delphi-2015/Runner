@@ -1,19 +1,21 @@
-#import "ActivityViewController.h"
+
 #import "AppDelegate.h"
 #import "MathData.h"
 #import "ActivityCell.h"
 #import "Run.h"
 #import "DetailViewController.h"
 #import "ScrollViewController.h"
+#import "ActivityTableViewController.h"
 
-@interface ActivityViewController ()
+@interface ActivityTableViewController ()<UITableViewDataSource,UITableViewDelegate>
 
-@property (strong,nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (strong,nonatomic) NSArray *runArray;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) NSArray *runArray;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
-@implementation ActivityViewController
+@implementation ActivityTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,6 +31,13 @@
     [super viewWillAppear:animated];
     [self loadData];
     [self.tableView reloadData];
+//    for (UIView *subview in self.tableView.subviews)
+//    {
+//        if ([NSStringFromClass([subview class]) isEqualToString:@"UITableViewWrapperView"])
+//        {
+//            subview.frame = CGRectMake(0, -64, self.tableView.bounds.size.width, self.tableView.bounds.size.height);
+//        }
+//    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -93,43 +102,43 @@
 
 #pragma mark - ActivityCell Edit
 /*
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // 删除数据
-        [self removeassignCoreData:indexPath];
-        [self loadData];
-        
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-
-- (void)removeassignCoreData:(NSIndexPath *)indexPath
-{
-    Run *run = [self.runArray objectAtIndex:indexPath.row];
-    
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Run"];
-   
-    request.predicate = [NSPredicate predicateWithFormat:@"timestamp = %@", run.timestamp];
-    NSArray *result = [self.managedObjectContext executeFetchRequest:request error:nil];
-    
-    for (Run *run in result) {
-        [self.managedObjectContext deleteObject:run];
-    }
-    
-    NSError *error = nil;
-    if (![self.managedObjectContext save:&error]) {
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
-}
-*/
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+ return YES;
+ }
+ 
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+ 
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ // 删除数据
+ [self removeassignCoreData:indexPath];
+ [self loadData];
+ 
+ [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+ }
+ }
+ 
+ - (void)removeassignCoreData:(NSIndexPath *)indexPath
+ {
+ Run *run = [self.runArray objectAtIndex:indexPath.row];
+ 
+ NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Run"];
+ 
+ request.predicate = [NSPredicate predicateWithFormat:@"timestamp = %@", run.timestamp];
+ NSArray *result = [self.managedObjectContext executeFetchRequest:request error:nil];
+ 
+ for (Run *run in result) {
+ [self.managedObjectContext deleteObject:run];
+ }
+ 
+ NSError *error = nil;
+ if (![self.managedObjectContext save:&error]) {
+ NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+ abort();
+ }
+ }
+ */
 
 #pragma mark - Navigation
 
@@ -142,6 +151,5 @@
         [((DetailViewController *)[segue destinationViewController])setRun:run];
     }
 }
-
 
 @end

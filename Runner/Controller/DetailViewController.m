@@ -17,10 +17,10 @@
 @property (weak, nonatomic) IBOutlet JBLineChartView *JBLineChartView;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UILabel *calLabel;
-@property (strong,nonatomic) NSArray *speedArray;
-@property (strong,nonatomic) NSArray *disArray;
-@property (strong,nonatomic) NSArray *locArray;
-@property (strong,nonatomic) MKPointAnnotation *point;
+@property (strong, nonatomic) NSArray *speedArray;
+@property (strong, nonatomic) NSArray *disArray;
+@property (strong, nonatomic) NSArray *locArray;
+@property (strong, nonatomic) MKPointAnnotation *point;
 
 @end
 

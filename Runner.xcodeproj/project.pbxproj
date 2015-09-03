@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4853D4651B983C7C0001ED3C /* ActivityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4853D4641B983C7C0001ED3C /* ActivityTableViewController.m */; };
 		485983081B7051D900AA9B8D /* SettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 485983071B7051D900AA9B8D /* SettingTableViewController.m */; };
 		4859830B1B70576A00AA9B8D /* WeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4859830A1B70576A00AA9B8D /* WeightViewController.m */; };
 		4859830E1B70578800AA9B8D /* HeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4859830D1B70578800AA9B8D /* HeightViewController.m */; };
@@ -30,7 +31,6 @@
 		48F7FA221B5B75ED007CF8B2 /* MathData.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA211B5B75ED007CF8B2 /* MathData.m */; };
 		48F7FA251B5BB86D007CF8B2 /* WGS84TOGCJ02.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA241B5BB86D007CF8B2 /* WGS84TOGCJ02.m */; };
 		48F7FA2B1B5BE7E6007CF8B2 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA2A1B5BE7E6007CF8B2 /* DetailViewController.m */; };
-		48F7FA311B5DDD0F007CF8B2 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA301B5DDD0F007CF8B2 /* ActivityViewController.m */; };
 		48F7FA4B1B5F5B43007CF8B2 /* JBChartInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA431B5F5B43007CF8B2 /* JBChartInformationView.m */; };
 		48F7FA4D1B5F5B43007CF8B2 /* JBLineChartFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA471B5F5B43007CF8B2 /* JBLineChartFooterView.m */; };
 		48F7FA571B5F68F0007CF8B2 /* ActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA541B5F68F0007CF8B2 /* ActivityCell.m */; };
@@ -80,6 +80,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4853D4631B983C7C0001ED3C /* ActivityTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityTableViewController.h; sourceTree = "<group>"; };
+		4853D4641B983C7C0001ED3C /* ActivityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityTableViewController.m; sourceTree = "<group>"; };
 		485983061B7051D900AA9B8D /* SettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewController.h; sourceTree = "<group>"; };
 		485983071B7051D900AA9B8D /* SettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewController.m; sourceTree = "<group>"; };
 		485983091B70576A00AA9B8D /* WeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightViewController.h; sourceTree = "<group>"; };
@@ -120,8 +122,6 @@
 		48F7FA241B5BB86D007CF8B2 /* WGS84TOGCJ02.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGS84TOGCJ02.m; sourceTree = "<group>"; };
 		48F7FA291B5BE7E6007CF8B2 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		48F7FA2A1B5BE7E6007CF8B2 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		48F7FA2F1B5DDD0F007CF8B2 /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
-		48F7FA301B5DDD0F007CF8B2 /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
 		48F7FA421B5F5B43007CF8B2 /* JBChartInformationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBChartInformationView.h; sourceTree = "<group>"; };
 		48F7FA431B5F5B43007CF8B2 /* JBChartInformationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBChartInformationView.m; sourceTree = "<group>"; };
 		48F7FA461B5F5B43007CF8B2 /* JBLineChartFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLineChartFooterView.h; sourceTree = "<group>"; };
@@ -239,8 +239,8 @@
 		489738A01B58AC20002A438B /* Activity */ = {
 			isa = PBXGroup;
 			children = (
-				48F7FA2F1B5DDD0F007CF8B2 /* ActivityViewController.h */,
-				48F7FA301B5DDD0F007CF8B2 /* ActivityViewController.m */,
+				4853D4631B983C7C0001ED3C /* ActivityTableViewController.h */,
+				4853D4641B983C7C0001ED3C /* ActivityTableViewController.m */,
 				48D893281B6B643600719997 /* ScrollViewController.h */,
 				48D893291B6B643600719997 /* ScrollViewController.m */,
 				48D893EC1B6B878400719997 /* BarChartViewController.h */,
@@ -462,7 +462,7 @@
 				48D8932A1B6B643600719997 /* ScrollViewController.m in Sources */,
 				4897387C1B58AAE8002A438B /* AppDelegate.m in Sources */,
 				48F7FA731B5FB806007CF8B2 /* JBLineChartView.m in Sources */,
-				48F7FA311B5DDD0F007CF8B2 /* ActivityViewController.m in Sources */,
+				4853D4651B983C7C0001ED3C /* ActivityTableViewController.m in Sources */,
 				48F7FA4D1B5F5B43007CF8B2 /* JBLineChartFooterView.m in Sources */,
 				485983081B7051D900AA9B8D /* SettingTableViewController.m in Sources */,
 				48F7FA221B5B75ED007CF8B2 /* MathData.m in Sources */,
