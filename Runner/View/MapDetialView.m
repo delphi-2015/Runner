@@ -114,7 +114,7 @@
             CGFloat blue = r_blue + ratio * (y_blue - r_blue);
             color = [UIColor colorWithRed:red green:green blue:blue alpha:1.0f];
             
-            // between yellow and green
+        // between yellow and green
         } else {
             NSUInteger index = [sortedArray indexOfObject:speed];
             double ratio = ((int)index - (int)locations.count/2.0) / ((int)locations.count/2.0);

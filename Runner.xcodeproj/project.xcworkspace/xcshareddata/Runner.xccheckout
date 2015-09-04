@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>226C74D8-CC66-463C-A2A6-C42F7685444D</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Runner</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>9359869D0F890920AD20F0305C9D7834D205DF31</key>
 		<string>https://github.com/delphi-2015/Runner.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Runner.xcodeproj</string>
+	<string>Runner.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>9359869D0F890920AD20F0305C9D7834D205DF31</key>

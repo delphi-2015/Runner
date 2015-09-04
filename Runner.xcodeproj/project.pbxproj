@@ -28,6 +28,7 @@
 		48D893E71B6B7B4200719997 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48D893E61B6B7AB900719997 /* Charts.framework */; };
 		48D893E81B6B7B4200719997 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 48D893E61B6B7AB900719997 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		48D893EE1B6B878400719997 /* BarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D893ED1B6B878400719997 /* BarChartViewController.m */; };
+		48F4D6B91B99710C00D44EF5 /* CountDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F4D6B81B99710C00D44EF5 /* CountDownView.m */; };
 		48F7FA221B5B75ED007CF8B2 /* MathData.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA211B5B75ED007CF8B2 /* MathData.m */; };
 		48F7FA251B5BB86D007CF8B2 /* WGS84TOGCJ02.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA241B5BB86D007CF8B2 /* WGS84TOGCJ02.m */; };
 		48F7FA2B1B5BE7E6007CF8B2 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA2A1B5BE7E6007CF8B2 /* DetailViewController.m */; };
@@ -116,6 +117,8 @@
 		48D893E11B6B7AB900719997 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = ../Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		48D893EC1B6B878400719997 /* BarChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarChartViewController.h; sourceTree = "<group>"; };
 		48D893ED1B6B878400719997 /* BarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarChartViewController.m; sourceTree = "<group>"; };
+		48F4D6B71B99710C00D44EF5 /* CountDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDownView.h; sourceTree = "<group>"; };
+		48F4D6B81B99710C00D44EF5 /* CountDownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountDownView.m; sourceTree = "<group>"; };
 		48F7FA201B5B75ED007CF8B2 /* MathData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathData.h; sourceTree = "<group>"; };
 		48F7FA211B5B75ED007CF8B2 /* MathData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathData.m; sourceTree = "<group>"; };
 		48F7FA231B5BB86D007CF8B2 /* WGS84TOGCJ02.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGS84TOGCJ02.h; sourceTree = "<group>"; };
@@ -324,6 +327,8 @@
 		48F7FA521B5F68F0007CF8B2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				48F4D6B71B99710C00D44EF5 /* CountDownView.h */,
+				48F4D6B81B99710C00D44EF5 /* CountDownView.m */,
 				48F7FA771B61FA7E007CF8B2 /* MapDetialView.h */,
 				48F7FA781B61FA7E007CF8B2 /* MapDetialView.m */,
 				48F7FA531B5F68F0007CF8B2 /* ActivityCell.h */,
@@ -483,6 +488,7 @@
 				4859830E1B70578800AA9B8D /* HeightViewController.m in Sources */,
 				48F7FA721B5FB806007CF8B2 /* JBChartView.m in Sources */,
 				489738B61B5B31F3002A438B /* RunningViewController.m in Sources */,
+				48F4D6B91B99710C00D44EF5 /* CountDownView.m in Sources */,
 				48F7FA791B61FA7E007CF8B2 /* MapDetialView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
