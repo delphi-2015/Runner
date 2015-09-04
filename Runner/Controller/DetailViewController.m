@@ -10,7 +10,6 @@
 #import "DistanceAnnotation.h"
 #import "ScrollViewController.h"
 
-
 @interface DetailViewController ()<MKMapViewDelegate,JBLineChartViewDelegate,JBLineChartViewDataSource>
 
 @property (weak, nonatomic) IBOutlet JBChartInformationView *JBChartInfoView;

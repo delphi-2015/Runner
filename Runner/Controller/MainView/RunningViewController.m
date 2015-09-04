@@ -6,8 +6,9 @@
 #import "MathData.h"
 #import "WGS84TOGCJ02.h"
 #import "DetailViewController.h"
+#import "CountDownView.h"
 
-@interface RunningViewController ()<UIActionSheetDelegate, CLLocationManagerDelegate, MKMapViewDelegate>
+@interface RunningViewController ()<UIActionSheetDelegate, CLLocationManagerDelegate, MKMapViewDelegate,CountDownViewdelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *disLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
@@ -16,7 +17,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *stopBtn;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
-@property (strong,nonatomic) MKPointAnnotation *point;
+@property (strong, nonatomic) CountDownView *countDownView;
+@property (strong, nonatomic) MKPointAnnotation *point;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) NSMutableArray *locations;
 @property (strong, nonatomic) NSTimer *timer;
@@ -28,8 +30,24 @@
 
 @implementation RunningViewController
 
+- (CountDownView *)countDownView
+{
+    if (!_countDownView)
+    {
+        self.countDownView = [[CountDownView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+        [self.view addSubview:_countDownView];
+    }
+    return  _countDownView;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //countDownView setting
+    self.countDownView.delegate = self;
+    self.countDownView.finishText = @"Run";
+    self.countDownView.countDownNumber = 5;
+    [self.countDownView updateAppearance];
     
     //CLLocationManagerDelegate, MKMapViewDelegate设定
     [self setup];
@@ -39,10 +57,10 @@
 {
     [super viewDidAppear:animated];
     
-    [self startRun];
+    [self.countDownView start];
 }
 
-- (void) viewWillDisappear:(BOOL)animated
+- (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
     
@@ -118,6 +136,15 @@
         actionSheet.tag = 2;
     }
 
+}
+
+#pragma mark - countDown delegete
+
+- (void)countDownfinished
+{
+    [self.countDownView removeFromSuperview];
+    
+    [self startRun];
 }
 
 #pragma mark - actionSheet delegete
