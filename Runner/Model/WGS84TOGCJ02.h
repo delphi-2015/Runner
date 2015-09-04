@@ -1,11 +1,3 @@
-//
-//  WGS84TOGCJ02.h
-//  Runner
-//
-//  Created by delphiwu on 15/7/19.
-//  Copyright (c) 2015年 Tech. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>  
 

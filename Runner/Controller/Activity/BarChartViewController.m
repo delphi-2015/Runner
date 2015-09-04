@@ -1,11 +1,3 @@
-//
-//  BarChartViewController.m
-//  Runner
-//
-//  Created by delphiwu on 15/7/31.
-//  Copyright (c) 2015年 Tech. All rights reserved.
-//
-
 #import "BarChartViewController.h"
 #import "Run.h"
 #import "AppDelegate.h"
@@ -54,7 +46,7 @@
     self.title = @"Bar Chart";
     
     _chartView.descriptionText = @"";
-    _chartView.noDataTextDescription = @"You need to provide data for the chart.";
+    _chartView.noDataTextDescription = @"";
     
     _chartView.drawBarShadowEnabled = NO;
     _chartView.drawValueAboveBarEnabled = YES;
@@ -100,7 +92,9 @@
     
     [self loadData];
     [self setMonthDataArray];
+
     [self setDataCount:(int)self.monthArray.count range:[self getMaxdistance:self.monthArray]];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -108,12 +102,6 @@
     [super viewDidAppear:animated];
     [_chartView animateWithXAxisDuration:1.0 yAxisDuration:1.0];
   
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - initialize Data
@@ -124,7 +112,8 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Run" inManagedObjectContext:self.managedObjectContext];
     
     [fetchRequest setEntity:entity];
-    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"timestamp" ascending:NO];
+    //这次得降序提取数据了
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"timestamp" ascending:YES];
     [fetchRequest setSortDescriptors:@[sort]]  ;
     
     self.runArray = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
@@ -137,6 +126,7 @@
     NSInteger i = 0;
     NSInteger  firstMonth = [self month:((Run *)self.runArray.firstObject).timestamp];
     
+    //将历史数据按照时间戳，每月累计里程，重新放到一个数组
     for (Run *run in self.runArray)
     {
         NSInteger tempMonth = [self month:run.timestamp];
@@ -181,6 +171,7 @@
 
 - (double)getMaxdistance:(NSArray *)array
 {
+    //取得历史单月最长里程，以便设定y坐标最大值
     double maxDistance = 0;
     for (NSNumber *temp in array)
     {
@@ -191,6 +182,7 @@
 
 - (NSInteger)month:(NSDate *)date
 {
+    //提取NSDate的月份参数；
     NSDateComponents *dateComponent = [[[NSCalendar alloc]initWithCalendarIdentifier:NSCalendarIdentifierGregorian]components:NSCalendarUnitMonth fromDate:date];
     
     return dateComponent.month;
@@ -200,24 +192,23 @@
 
 - (void)setDataCount:(int)count range:(double)range
 {
-    NSMutableArray *xVals = [[NSMutableArray alloc] init];
+    NSMutableArray *xVals = [[NSMutableArray alloc]init];
     
+    int y = (int)[self month:((Run *)self.runArray.firstObject).timestamp]-1;
     for (int i = 0; i < count; i++)
     {
-        int y = (int)[self month:((Run *)self.runArray.firstObject).timestamp]-1;
         [xVals addObject:months[y % 12]];
         y ++;
     }
     
-    NSMutableArray *yVals = [[NSMutableArray alloc] init];
-    
+    NSMutableArray *yVals = [[NSMutableArray alloc]init];
     for (int i = 0; i < count; i++)
     {
         double val = [[self.monthArray objectAtIndex:i] doubleValue]/1000.00;
         [yVals addObject:[[BarChartDataEntry alloc] initWithValue:val xIndex:i]];
     }
     
-    BarChartDataSet *set1 = [[BarChartDataSet alloc] initWithYVals:yVals label:@"DataSet"];
+    BarChartDataSet *set1 = [[BarChartDataSet alloc] initWithYVals:yVals label:@"月跑步总量"];
     set1.barSpace = 0.35;
     
     NSMutableArray *dataSets = [[NSMutableArray alloc] init];

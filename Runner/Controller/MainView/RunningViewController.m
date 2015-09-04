@@ -1,11 +1,3 @@
-//
-//  RunningViewController.m
-//  Runner
-//
-//  Created by delphiwu on 15/7/19.
-//  Copyright (c) 2015年 Tech. All rights reserved.
-//
-
 #import "RunningViewController.h"
 #import "Run.h"
 #import "Location.h"
@@ -14,8 +6,9 @@
 #import "MathData.h"
 #import "WGS84TOGCJ02.h"
 #import "DetailViewController.h"
+#import "CountDownView.h"
 
-@interface RunningViewController ()<UIActionSheetDelegate, CLLocationManagerDelegate, MKMapViewDelegate>
+@interface RunningViewController ()<UIActionSheetDelegate, CLLocationManagerDelegate, MKMapViewDelegate,CountDownViewdelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *disLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
@@ -24,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *stopBtn;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
+@property (strong, nonatomic) CountDownView *countDownView;
+@property (strong, nonatomic) MKPointAnnotation *point;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) NSMutableArray *locations;
 @property (strong, nonatomic) NSTimer *timer;
@@ -35,22 +30,44 @@
 
 @implementation RunningViewController
 
+- (CountDownView *)countDownView
+{
+    if (!_countDownView)
+    {
+        self.countDownView = [[CountDownView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+        [self.view addSubview:_countDownView];
+    }
+    return  _countDownView;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //countDownView setting
+    self.countDownView.delegate = self;
+    self.countDownView.finishText = @"Run";
+    self.countDownView.countDownNumber = 5;
+    [self.countDownView updateAppearance];
+    
+    //CLLocationManagerDelegate, MKMapViewDelegate设定
     [self setup];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     
-    [self startRun];
+    [self.countDownView start];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    //停止更新位置
+    [self.locationManager stopUpdatingLocation];
+    //停止计时器
+    [self.timer invalidate];
 }
 
 - (void)setup
@@ -90,6 +107,7 @@
 
 - (void)perSecond
 {
+    //每秒数据刷新
     self.seconds++;
     self.timeLabel.text = [NSString stringWithFormat:@"%@", [MathData stringifySecondCount:self.seconds usingLongFormat:NO]];
     self.disLabel.text = [NSString stringWithFormat:@"%@", [MathData stringifyDistance:self.distance]];
@@ -99,7 +117,8 @@
 
 - (IBAction)stopBtnPressed:(id)sender
 {
-    if (self.distance)
+    //按下stop后有数据（路程超过50m算有效）可以保存，没有删除或取消
+    if (self.distance > 50)
     {
         UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self
                                                         cancelButtonTitle:@"取消 " destructiveButtonTitle:nil
@@ -117,8 +136,18 @@
         actionSheet.tag = 2;
     }
 
-
 }
+
+#pragma mark - countDown delegete
+
+- (void)countDownfinished
+{
+    [self.countDownView removeFromSuperview];
+    
+    [self startRun];
+}
+
+#pragma mark - actionSheet delegete
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
@@ -145,6 +174,7 @@
 
 - (void)saveData
 {
+    //将数据通过coredata保存
     Run *newRun = [NSEntityDescription insertNewObjectForEntityForName:@"Run"
                                                 inManagedObjectContext:self.managedObjectContext];
     
@@ -165,7 +195,7 @@
     
     newRun.locations = [NSOrderedSet orderedSetWithArray:locationArray];
     self.run = newRun;
-    
+
     // Save the context.
     NSError *error = nil;
     if (![self.managedObjectContext save:&error]) {
@@ -176,9 +206,12 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    //传递要刚跑完的数据给detail现实界面
     [(DetailViewController *)[segue destinationViewController] setRun:self.run];
 }
+
 #pragma mark - CLLocationManager  &  mapView
+
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     CLLocation *loc=[locations lastObject];
@@ -187,8 +220,8 @@
     {
         for (CLLocation *new in locations)
         {
+            //火星坐标系的转换
             CLLocation *newLocation = [WGS84TOGCJ02 transformFromWGSToGCJ:new];
-        
             NSDate *eventDate = newLocation.timestamp;
             NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
         
@@ -205,6 +238,29 @@
                     [self.mapView addOverlay:[MKPolyline polylineWithCoordinates:coords count:2]];
                 }
                 [self.locations addObject:newLocation];
+            }
+        }
+    }else
+    {
+        for (CLLocation *new in locations)
+        {
+            
+            NSDate *eventDate = new.timestamp;
+            NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
+            
+            if (fabs(howRecent) < 10.0 && new.horizontalAccuracy < 20)
+            {
+                if (self.locations.count > 0)
+                {
+                    self.distance += [new distanceFromLocation:self.locations.lastObject];
+                    
+                    CLLocationCoordinate2D coords[2];
+                    coords[0] = ((CLLocation *)self.locations.lastObject).coordinate;
+                    coords[1] = new.coordinate;
+                    
+                    [self.mapView addOverlay:[MKPolyline polylineWithCoordinates:coords count:2]];
+                }
+                [self.locations addObject:new];
             }
         }
     }
@@ -224,6 +280,14 @@
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
+    [mapView removeAnnotation:self.point];
+    
+    // 添加移动时的追踪annotation
+    MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
+    annotation.coordinate = userLocation.coordinate;
+    self.point = annotation;
+    [mapView addAnnotation:self.point];
+    
     self.mapView.centerCoordinate = userLocation.coordinate;
 }
 @end

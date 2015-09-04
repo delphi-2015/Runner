@@ -13,7 +13,7 @@
         <relationship name="locations" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Location" inverseName="run" inverseEntity="Location" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Location" positionX="-45" positionY="0" width="128" height="105"/>
-        <element name="Run" positionX="-18" positionY="54" width="128" height="105"/>
+        <element name="Location" positionX="-65" positionY="-9" width="128" height="105"/>
+        <element name="Run" positionX="-333" positionY="-18" width="128" height="103"/>
     </elements>
 </model>

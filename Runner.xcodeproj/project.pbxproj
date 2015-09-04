@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4853D4651B983C7C0001ED3C /* ActivityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4853D4641B983C7C0001ED3C /* ActivityTableViewController.m */; };
+		485983081B7051D900AA9B8D /* SettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 485983071B7051D900AA9B8D /* SettingTableViewController.m */; };
+		4859830B1B70576A00AA9B8D /* WeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4859830A1B70576A00AA9B8D /* WeightViewController.m */; };
+		4859830E1B70578800AA9B8D /* HeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4859830D1B70578800AA9B8D /* HeightViewController.m */; };
+		485983131B71F8BE00AA9B8D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 485983121B71F8BE00AA9B8D /* Images.xcassets */; };
 		48645F8C1B6854B10098EEE8 /* DistanceAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 48645F8B1B6854B10098EEE8 /* DistanceAnnotation.m */; };
 		489738791B58AAE8002A438B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 489738781B58AAE8002A438B /* main.m */; };
 		4897387C1B58AAE8002A438B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4897387B1B58AAE8002A438B /* AppDelegate.m */; };
 		489738851B58AAE8002A438B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 489738831B58AAE8002A438B /* Main.storyboard */; };
-		489738871B58AAE8002A438B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 489738861B58AAE8002A438B /* Images.xcassets */; };
 		4897388A1B58AAE8002A438B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 489738881B58AAE8002A438B /* LaunchScreen.xib */; };
 		489738961B58AAE8002A438B /* RunnerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 489738951B58AAE8002A438B /* RunnerTests.m */; };
 		489738AC1B58AC20002A438B /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 489738A51B58AC20002A438B /* Location.m */; };
@@ -24,10 +28,10 @@
 		48D893E71B6B7B4200719997 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48D893E61B6B7AB900719997 /* Charts.framework */; };
 		48D893E81B6B7B4200719997 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 48D893E61B6B7AB900719997 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		48D893EE1B6B878400719997 /* BarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D893ED1B6B878400719997 /* BarChartViewController.m */; };
+		48F4D6B91B99710C00D44EF5 /* CountDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F4D6B81B99710C00D44EF5 /* CountDownView.m */; };
 		48F7FA221B5B75ED007CF8B2 /* MathData.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA211B5B75ED007CF8B2 /* MathData.m */; };
 		48F7FA251B5BB86D007CF8B2 /* WGS84TOGCJ02.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA241B5BB86D007CF8B2 /* WGS84TOGCJ02.m */; };
 		48F7FA2B1B5BE7E6007CF8B2 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA2A1B5BE7E6007CF8B2 /* DetailViewController.m */; };
-		48F7FA311B5DDD0F007CF8B2 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA301B5DDD0F007CF8B2 /* ActivityViewController.m */; };
 		48F7FA4B1B5F5B43007CF8B2 /* JBChartInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA431B5F5B43007CF8B2 /* JBChartInformationView.m */; };
 		48F7FA4D1B5F5B43007CF8B2 /* JBLineChartFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA471B5F5B43007CF8B2 /* JBLineChartFooterView.m */; };
 		48F7FA571B5F68F0007CF8B2 /* ActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7FA541B5F68F0007CF8B2 /* ActivityCell.m */; };
@@ -77,6 +81,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4853D4631B983C7C0001ED3C /* ActivityTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityTableViewController.h; sourceTree = "<group>"; };
+		4853D4641B983C7C0001ED3C /* ActivityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityTableViewController.m; sourceTree = "<group>"; };
+		485983061B7051D900AA9B8D /* SettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewController.h; sourceTree = "<group>"; };
+		485983071B7051D900AA9B8D /* SettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewController.m; sourceTree = "<group>"; };
+		485983091B70576A00AA9B8D /* WeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightViewController.h; sourceTree = "<group>"; };
+		4859830A1B70576A00AA9B8D /* WeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightViewController.m; sourceTree = "<group>"; };
+		4859830C1B70578800AA9B8D /* HeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeightViewController.h; sourceTree = "<group>"; };
+		4859830D1B70578800AA9B8D /* HeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeightViewController.m; sourceTree = "<group>"; };
+		485983121B71F8BE00AA9B8D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		48645F8A1B6854B10098EEE8 /* DistanceAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistanceAnnotation.h; sourceTree = "<group>"; };
 		48645F8B1B6854B10098EEE8 /* DistanceAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistanceAnnotation.m; sourceTree = "<group>"; };
 		489738731B58AAE8002A438B /* Runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Runner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,7 +98,6 @@
 		4897387A1B58AAE8002A438B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4897387B1B58AAE8002A438B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		489738841B58AAE8002A438B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		489738861B58AAE8002A438B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		489738891B58AAE8002A438B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		4897388F1B58AAE8002A438B /* RunnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunnerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		489738941B58AAE8002A438B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,14 +117,14 @@
 		48D893E11B6B7AB900719997 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = ../Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		48D893EC1B6B878400719997 /* BarChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarChartViewController.h; sourceTree = "<group>"; };
 		48D893ED1B6B878400719997 /* BarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarChartViewController.m; sourceTree = "<group>"; };
+		48F4D6B71B99710C00D44EF5 /* CountDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDownView.h; sourceTree = "<group>"; };
+		48F4D6B81B99710C00D44EF5 /* CountDownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountDownView.m; sourceTree = "<group>"; };
 		48F7FA201B5B75ED007CF8B2 /* MathData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathData.h; sourceTree = "<group>"; };
 		48F7FA211B5B75ED007CF8B2 /* MathData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathData.m; sourceTree = "<group>"; };
 		48F7FA231B5BB86D007CF8B2 /* WGS84TOGCJ02.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGS84TOGCJ02.h; sourceTree = "<group>"; };
 		48F7FA241B5BB86D007CF8B2 /* WGS84TOGCJ02.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGS84TOGCJ02.m; sourceTree = "<group>"; };
 		48F7FA291B5BE7E6007CF8B2 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		48F7FA2A1B5BE7E6007CF8B2 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		48F7FA2F1B5DDD0F007CF8B2 /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
-		48F7FA301B5DDD0F007CF8B2 /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
 		48F7FA421B5F5B43007CF8B2 /* JBChartInformationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBChartInformationView.h; sourceTree = "<group>"; };
 		48F7FA431B5F5B43007CF8B2 /* JBChartInformationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBChartInformationView.m; sourceTree = "<group>"; };
 		48F7FA461B5F5B43007CF8B2 /* JBLineChartFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLineChartFooterView.h; sourceTree = "<group>"; };
@@ -174,17 +186,17 @@
 		489738751B58AAE8002A438B /* Runner */ = {
 			isa = PBXGroup;
 			children = (
-				48F7FA521B5F68F0007CF8B2 /* View */,
 				48F7FA3F1B5F5B43007CF8B2 /* JBChartView */,
+				48F7FA521B5F68F0007CF8B2 /* View */,
 				489738AA1B58AC20002A438B /* Model */,
 				4897389F1B58AC20002A438B /* Controller */,
 				489738A31B58AC20002A438B /* CoreData */,
 				4897387A1B58AAE8002A438B /* AppDelegate.h */,
 				4897387B1B58AAE8002A438B /* AppDelegate.m */,
 				489738831B58AAE8002A438B /* Main.storyboard */,
-				489738861B58AAE8002A438B /* Images.xcassets */,
 				489738881B58AAE8002A438B /* LaunchScreen.xib */,
 				489738761B58AAE8002A438B /* Supporting Files */,
+				485983121B71F8BE00AA9B8D /* Images.xcassets */,
 			);
 			path = Runner;
 			sourceTree = "<group>";
@@ -230,8 +242,8 @@
 		489738A01B58AC20002A438B /* Activity */ = {
 			isa = PBXGroup;
 			children = (
-				48F7FA2F1B5DDD0F007CF8B2 /* ActivityViewController.h */,
-				48F7FA301B5DDD0F007CF8B2 /* ActivityViewController.m */,
+				4853D4631B983C7C0001ED3C /* ActivityTableViewController.h */,
+				4853D4641B983C7C0001ED3C /* ActivityTableViewController.m */,
 				48D893281B6B643600719997 /* ScrollViewController.h */,
 				48D893291B6B643600719997 /* ScrollViewController.m */,
 				48D893EC1B6B878400719997 /* BarChartViewController.h */,
@@ -254,6 +266,12 @@
 		489738A21B58AC20002A438B /* SettingView */ = {
 			isa = PBXGroup;
 			children = (
+				485983061B7051D900AA9B8D /* SettingTableViewController.h */,
+				485983071B7051D900AA9B8D /* SettingTableViewController.m */,
+				485983091B70576A00AA9B8D /* WeightViewController.h */,
+				4859830A1B70576A00AA9B8D /* WeightViewController.m */,
+				4859830C1B70578800AA9B8D /* HeightViewController.h */,
+				4859830D1B70578800AA9B8D /* HeightViewController.m */,
 			);
 			path = SettingView;
 			sourceTree = "<group>";
@@ -309,6 +327,8 @@
 		48F7FA521B5F68F0007CF8B2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				48F4D6B71B99710C00D44EF5 /* CountDownView.h */,
+				48F4D6B81B99710C00D44EF5 /* CountDownView.m */,
 				48F7FA771B61FA7E007CF8B2 /* MapDetialView.h */,
 				48F7FA781B61FA7E007CF8B2 /* MapDetialView.m */,
 				48F7FA531B5F68F0007CF8B2 /* ActivityCell.h */,
@@ -424,9 +444,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				485983131B71F8BE00AA9B8D /* Images.xcassets in Resources */,
 				489738851B58AAE8002A438B /* Main.storyboard in Resources */,
 				4897388A1B58AAE8002A438B /* LaunchScreen.xib in Resources */,
-				489738871B58AAE8002A438B /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,8 +467,9 @@
 				48D8932A1B6B643600719997 /* ScrollViewController.m in Sources */,
 				4897387C1B58AAE8002A438B /* AppDelegate.m in Sources */,
 				48F7FA731B5FB806007CF8B2 /* JBLineChartView.m in Sources */,
-				48F7FA311B5DDD0F007CF8B2 /* ActivityViewController.m in Sources */,
+				4853D4651B983C7C0001ED3C /* ActivityTableViewController.m in Sources */,
 				48F7FA4D1B5F5B43007CF8B2 /* JBLineChartFooterView.m in Sources */,
+				485983081B7051D900AA9B8D /* SettingTableViewController.m in Sources */,
 				48F7FA221B5B75ED007CF8B2 /* MathData.m in Sources */,
 				489738B11B59DC98002A438B /* MainViewController.m in Sources */,
 				489738791B58AAE8002A438B /* main.m in Sources */,
@@ -459,12 +480,15 @@
 				48F7FA711B5FB806007CF8B2 /* JBBarChartView.m in Sources */,
 				489738AC1B58AC20002A438B /* Location.m in Sources */,
 				489738AE1B58AC20002A438B /* Runner.xcdatamodeld in Sources */,
+				4859830B1B70576A00AA9B8D /* WeightViewController.m in Sources */,
 				48F7FA581B5F68F0007CF8B2 /* ColorPolyline.m in Sources */,
 				48F7FA251B5BB86D007CF8B2 /* WGS84TOGCJ02.m in Sources */,
 				48D893EE1B6B878400719997 /* BarChartViewController.m in Sources */,
 				48F7FA4B1B5F5B43007CF8B2 /* JBChartInformationView.m in Sources */,
+				4859830E1B70578800AA9B8D /* HeightViewController.m in Sources */,
 				48F7FA721B5FB806007CF8B2 /* JBChartView.m in Sources */,
 				489738B61B5B31F3002A438B /* RunningViewController.m in Sources */,
+				48F4D6B91B99710C00D44EF5 /* CountDownView.m in Sources */,
 				48F7FA791B61FA7E007CF8B2 /* MapDetialView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -529,7 +553,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: wu delphi (82N28SYXCL)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -548,10 +573,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "6772a367-d421-4d76-b955-4672ffaacdef";
 				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};
@@ -572,7 +599,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: wu delphi (3FK5JW7CVT)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -585,8 +613,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "6772a367-d421-4d76-b955-4672ffaacdef";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -596,10 +625,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: wu delphi (82N28SYXCL)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Runner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6772a367-d421-4d76-b955-4672ffaacdef";
 			};
 			name = Debug;
 		};
@@ -607,10 +640,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: wu delphi (3FK5JW7CVT)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Runner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6772a367-d421-4d76-b955-4672ffaacdef";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -618,6 +656,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: wu delphi (82N28SYXCL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: wu delphi (82N28SYXCL)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -630,6 +670,7 @@
 				INFOPLIST_FILE = RunnerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6772a367-d421-4d76-b955-4672ffaacdef";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Runner.app/Runner";
 			};
 			name = Debug;
@@ -638,6 +679,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: wu delphi (3FK5JW7CVT)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -646,6 +688,7 @@
 				INFOPLIST_FILE = RunnerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6772a367-d421-4d76-b955-4672ffaacdef";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Runner.app/Runner";
 			};
 			name = Release;

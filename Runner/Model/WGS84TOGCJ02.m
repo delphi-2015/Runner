@@ -14,6 +14,7 @@ const double pi = 3.14159265358979324;
 
 @implementation WGS84TOGCJ02
 
+//关于火星坐标系的转换计算
 + (CLLocation *)transformFromWGSToGCJ:(CLLocation *)wgsLocation
 {
     CLLocationCoordinate2D adjustLoc;

@@ -130,15 +130,14 @@ static UIColor *kJBLineChartViewDefaultLineColor = nil;
     /*
      * Subview rectangle calculations
      */
-    CGRect mainViewRect = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width, [self availableHeight]);
-
+    CGRect mainViewRect = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, [[UIScreen mainScreen]bounds].size.width, [self availableHeight]);
     /*
      * The data collection holds all position and marker information:
      * constructed via datasource and delegate functions
      */
     dispatch_block_t createChartData = ^{
 
-        CGFloat pointSpace = (self.bounds.size.width - (kJBLineChartLineViewEdgePadding * 2)) / ([self dataCount] - 1); // Space in between points
+        CGFloat pointSpace = ([[UIScreen mainScreen]bounds].size.width - (kJBLineChartLineViewEdgePadding * 2)) / ([self dataCount] - 1); // Space in between points
         CGFloat xOffset = kJBLineChartLineViewEdgePadding;
         CGFloat yOffset = 0;
 
@@ -189,7 +188,7 @@ static UIColor *kJBLineChartViewDefaultLineColor = nil;
             self.selectionView = nil;
         }
 
-        self.selectionView = [[JBChartSelectionView alloc] initWithFrame:CGRectMake(0, 0, kJBLineSelectionViewWidth, self.bounds.size.height - self.footerView.frame.size.height)];
+        self.selectionView = [[JBChartSelectionView alloc] initWithFrame:CGRectMake(0, 0, kJBLineSelectionViewWidth, [[UIScreen mainScreen]bounds].size.height*3/13 - self.footerView.frame.size.height)];
         self.selectionView.alpha = 0.0;
         if ([self.dataSource respondsToSelector:@selector(selectionColorForLineChartView:)])
         {
@@ -206,8 +205,8 @@ static UIColor *kJBLineChartViewDefaultLineColor = nil;
     [self.lineView reloadData];
 
     // Position header and footer
-    self.headerView.frame = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width, self.headerView.frame.size.height);
-    self.footerView.frame = CGRectMake(self.bounds.origin.x+5, self.bounds.size.height - self.footerView.frame.size.height, self.bounds.size.width-10, self.footerView.frame.size.height);
+    self.headerView.frame = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, [[UIScreen mainScreen]bounds].size.width, self.headerView.frame.size.height);
+    self.footerView.frame = CGRectMake(self.bounds.origin.x+5, [[UIScreen mainScreen]bounds].size.height*3/13 - self.footerView.frame.size.height, [[UIScreen mainScreen]bounds].size.width-10, self.footerView.frame.size.height);
 
 }
 
@@ -228,7 +227,7 @@ static UIColor *kJBLineChartViewDefaultLineColor = nil;
 
 - (CGFloat)availableHeight
 {
-    return self.bounds.size.height - self.headerView.frame.size.height - self.footerView.frame.size.height - self.headerPadding;
+    return [[UIScreen mainScreen]bounds].size.height*3/13 - self.headerView.frame.size.height - self.footerView.frame.size.height - self.headerPadding;
 }
 
 - (CGFloat)maxHeight
@@ -374,7 +373,7 @@ static UIColor *kJBLineChartViewDefaultLineColor = nil;
         [self.delegate lineChartView:self didSelectChartAtIndex:[self indexForPoint:touchPoint]];
     }
 
-    CGFloat xOffset = fmin(self.bounds.size.width - self.selectionView.frame.size.width, fmax(0, touchPoint.x - (ceil(self.selectionView.frame.size.width * 0.5))));
+    CGFloat xOffset = fmin([[UIScreen mainScreen]bounds].size.width - self.selectionView.frame.size.width, fmax(0, touchPoint.x - (ceil(self.selectionView.frame.size.width * 0.5))));
     self.selectionView.frame = CGRectMake(xOffset, self.selectionView.frame.origin.y, self.selectionView.frame.size.width, self.selectionView.frame.size.height);
     [self setSelectionViewVisible:YES animated:YES];
 }
@@ -394,7 +393,7 @@ static UIColor *kJBLineChartViewDefaultLineColor = nil;
         [self.delegate lineChartView:self didSelectChartAtIndex:[self indexForPoint:touchPoint]];
     }
 
-    CGFloat xOffset = fmin(self.bounds.size.width - self.selectionView.frame.size.width, fmax(0, touchPoint.x - (ceil(self.selectionView.frame.size.width * 0.5))));
+    CGFloat xOffset = fmin([[UIScreen mainScreen]bounds].size.width - self.selectionView.frame.size.width, fmax(0, touchPoint.x - (ceil(self.selectionView.frame.size.width * 0.5))));
     self.selectionView.frame = CGRectMake(xOffset, self.selectionView.frame.origin.y, self.selectionView.frame.size.width, self.selectionView.frame.size.height);
     [self setSelectionViewVisible:YES animated:YES];
 }
@@ -453,13 +452,13 @@ static UIColor *kJBLineChartViewDefaultLineColor = nil;
     {
         if (index == 0)
         {
-            [dynamicPath moveToPoint:CGPointMake(lineChartPoint.position.x, fmin(self.bounds.size.height - kJBLineChartLineViewEdgePadding, fmax(kJBLineChartLineViewEdgePadding, lineChartPoint.position.y)))];
-            [flatPath moveToPoint:CGPointMake(lineChartPoint.position.x, ceil(self.bounds.size.height * 0.5))];
+            [dynamicPath moveToPoint:CGPointMake(lineChartPoint.position.x, fmin([[UIScreen mainScreen]bounds].size.height*3/13 - kJBLineChartLineViewEdgePadding, fmax(kJBLineChartLineViewEdgePadding, lineChartPoint.position.y)))];
+            [flatPath moveToPoint:CGPointMake(lineChartPoint.position.x, ceil([[UIScreen mainScreen]bounds].size.height*3/13 * 0.5))];
         }
         else
         {
-            [dynamicPath addLineToPoint:CGPointMake(lineChartPoint.position.x, fmin(self.bounds.size.height - kJBLineChartLineViewEdgePadding, fmax(kJBLineChartLineViewEdgePadding, lineChartPoint.position.y)))];
-            [flatPath addLineToPoint:CGPointMake(lineChartPoint.position.x, ceil(self.bounds.size.height * 0.5))];
+            [dynamicPath addLineToPoint:CGPointMake(lineChartPoint.position.x, fmin([[UIScreen mainScreen]bounds].size.height*3/13 - kJBLineChartLineViewEdgePadding, fmax(kJBLineChartLineViewEdgePadding, lineChartPoint.position.y)))];
+            [flatPath addLineToPoint:CGPointMake(lineChartPoint.position.x, ceil([[UIScreen mainScreen]bounds].size.height*3/13 * 0.5))];
         }
 
         index++;
